@@ -7,13 +7,12 @@
            for(i=0 ;i<r ;i++)
            {
                   for(j=0 ;j<r-i ;j++)
-                  printf(" ");
- 
+                  printf(" "); 
                           for(k=0 ;k<=i ;k++)
                           {
                                   printf("* ");
                           }
                           printf("\n");
           }
-          return 0;
+return 0;
  }
