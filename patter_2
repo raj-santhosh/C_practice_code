@@ -1,0 +1,27 @@
+WAP to print this pattern
+5
+* *
+5 4 3
+* * * *
+5 4 3 2 1 
+
+#include<stdio.h>
+int main()
+{
+        int row,col,num;
+        for(row=1;row<6;row++)
+        {
+                num =5;
+                for(col=1 ;col<=row;col++)
+                        if(row%2)
+                        {
+                                printf("%d ",num);
+                                num-=1;
+                        }
+                        else
+                        {
+                                printf("* ");
+                        }
+         }
+  return 0;
+}
