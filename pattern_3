@@ -1,0 +1,31 @@
+WAP to print pattern.
+        E
+      1 2
+    C D E
+  1 2 3 4
+A B C D E
+#include<stdio.h>
+int main()
+{     int row ,col,num,sp;
+        char ch;
+        for(row=1;row<6;row++)
+        {       num=1;
+                ch ='E'-row+1;
+                for(sp=1;sp<=5-row;sp++)
+                        printf("  ");
+                        for(col=1;col<=row;col++)
+                                if(row%2)
+                                {
+                                        printf("%c ",ch);
+                                        ch++;
+                                }
+                                else
+                                {
+                                        printf("%d ",num);
+                                        num++;
+                                }
+
+                        printf("\n");
+        }
+return 0;
+}
