@@ -1,0 +1,35 @@
+WAP swap nibble using bitwise
+#include<stdio.h>
+int main()
+{
+           short int i,j,num,pos,m,n;
+           printf("enter int num:");
+           scanf("%hd",&num);
+
+           printf(".........Befor.......\n");
+            for(pos=15;pos>=0;pos--)
+            {      
+                printf("%d ",num>>pos&1);
+                if(pos%4==0)
+                        printf(" ");
+
+            }
+            printf("\n");
+          for(i=0,j=15 ;i<j,i<4; i++,j--)
+          {
+                  m = num>>i&1;
+                  n = num>>j&1;
+                  if(m!=n)
+                  {       num = num ^1<<i;
+                          num = num ^1<<j;
+                  }
+          }
+           printf("........After..........\n");
+            for(pos=15;pos>=0;pos--)
+            {     printf("%d ",num>>pos&1);
+                              if(pos%4==0)
+                          printf(" ");
+            }
+                  printf("\n");
+return 0;
+}
