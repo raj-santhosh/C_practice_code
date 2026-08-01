@@ -1,0 +1,22 @@
+WAP print pattern.
+       A
+     A B C
+   A B C D E
+ A B C D E F G
+ ................................
+ #include<stdio.h>
+int main()
+{
+        int row,col,sp;
+        for(row=1 ;row<=4 ;row++)
+        {
+                for(sp=1 ;sp<= 4-row ;sp++)
+                        printf("  ");
+                for(col=1 ;col<=2*row-1 ;col++)
+                {
+                        printf(" %c",65+col-1);
+                }
+                printf("\n");
+        }
+        return 0;
+}
