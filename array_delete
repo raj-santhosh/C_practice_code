@@ -1,0 +1,30 @@
+WAP delete 1st digit all element in the array.
+#include<stdio.h>
+int main()
+{
+        int a[5];
+        int i,j,temp,div,dig,del,c;
+        int *p=a;
+        for(i=0 ;i<5;i++)
+                scanf("%d",p+i);
+
+        for(i=0 ;i<5 ;i++)
+        {
+                temp=*(p+i);
+                c=0;
+                while(temp)
+                {
+                        c++;
+                        temp/=10;
+                }
+                div=1;
+                for(j=0 ;j<c-1 ;j++)
+                {
+                        div=div*10;
+                }
+
+                del = *(p+i)%div;
+                printf("%d  ",del);
+        }
+return 0;
+}
