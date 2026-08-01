@@ -1,0 +1,36 @@
+WAP check number is armstrong or not
+#include<stdio.h>
+int main(){
+        int num,temp,org;
+        int digits=0,digit,sum=0;
+        int power,c;
+
+        printf("Enter a num:");
+        scanf("%d",&num);
+        org=num;
+        temp=num;
+        // count no.of digits
+        while(temp!=0)
+        {
+                digits++;
+                temp/=10;
+        }
+        temp=num;
+        while(temp!=0)
+        {       digit=temp%10;
+                power =1;
+                c =0;
+                while(c < digits)
+                {
+                        power = power*digit;
+                        c++;
+                }
+                sum = sum+power;
+                temp = temp/10;
+        }
+        if(sum==org)
+                printf("%d is Armstrong num\n",org);
+        else
+                printf("%d is not Armstrong num\n",org);
+return 0;
+}
