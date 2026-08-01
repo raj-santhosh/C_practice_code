@@ -1,0 +1,19 @@
+WAP insert num in any index.
+#include<stdio.h>
+int main(){
+        int a[7]={2,3,5,7,11,13};
+        int i,j,ind,len;
+        printf("enter index:");
+        scanf("%d",&ind);
+        for(len=0 ;a[len] ;len++);
+        {
+                for(j=7 ;j>ind ;j--)
+                        a[j]=a[j-1];
+
+                a[ind]=51;
+        }
+
+        for(i=0 ;i<7 ;i++)
+                printf("%d ",a[i]);
+return 0;
+}
