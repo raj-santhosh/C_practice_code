@@ -1,0 +1,31 @@
+WAP sum of all 1st digit in array element.
+#include<stdio.h>
+int main()
+{
+        int a[5];
+        int *p=a;
+        int i,j,temp,ele,sum,add=0,c,div;
+        for(i=0 ;i<5 ;i++)
+                scanf("%d",p+i);
+
+        for(i=0 ;i<5;i++)
+        {
+                temp = *(p+i);
+                c=0;
+                div=1;
+                while(temp)
+                {       c++;
+                        temp/=10;
+                }
+
+                for(j=0 ;j<c-1;j++)
+                {
+                        div =div*10;
+                }
+                        sum = *(p+i)/div;
+                add = add + sum;
+        }
+        printf("sum all 1st digit=%d\n",add);
+
+return 0;
+}
