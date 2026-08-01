@@ -1,0 +1,23 @@
+WAP check number is palindrome or not.
+#include<stdio.h>
+int main()
+{
+        int i,n,temp,rev;
+        printf("Enter num");
+        scanf("%d",&n);
+        temp = n;
+        for(rev =0 ;temp ;temp =temp/10)
+        {
+                i = temp %10;
+                rev =rev *10+i;
+        }
+        if(n == rev)
+        {
+                printf("%d is palindrome\n",n);
+        }
+        else
+        {
+                printf("%d is not palindrome\n",n);
+        }
+return 0;
+}
