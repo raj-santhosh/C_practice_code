@@ -1,0 +1,20 @@
+WAP check perfect number or not.
+#include<stdio.h>
+int main(){
+        int num, i,add=0;
+        printf("Enter num :");
+        scanf("%d",&num);
+        //printf("factors of %d are:",num);
+
+        for(i=1;i<num;i++)
+        {
+                if(!(num%i))
+                        add+=i;
+        }
+        if(num == add)
+                printf("%d is perfectnumber\n",num);
+        else
+                printf("%d is not perfect number\n",num);
+
+        return 0;
+}
