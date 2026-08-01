@@ -1,0 +1,23 @@
+WAP print pattern
+1
+2 6
+3 7 10
+4 8 11 13
+5 9 12 14 15
+#include<stdio.h>
+int main()
+{
+        int row,col,num,gap;
+        for(row=1;row<=5;row++)
+        {       num=1;
+                gap=4;
+                for(col=1;col<=row; col++)
+                {
+                        printf("%d ",num+row-1);
+                        num=num+gap;
+                        gap--;
+                }
+                printf("\n");
+        }
+return 0;
+}
