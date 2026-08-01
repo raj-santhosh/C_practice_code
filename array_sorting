@@ -1,4 +1,4 @@
-WAP sort ascending order in the array element
+WAP sorting ascending order in the array element
 #include<stdio.h>
 int main()       
 {
@@ -9,7 +9,7 @@ int main()
         {  
                 for(j=0 ;j<ele-1 -i ;j++) 
                 {
-                        if(a[j]<a[j+1])
+                        if(a[j]>a[j+1])
                         {
                                   t    = a[j];
                                 a[j]   = a[j+1];
