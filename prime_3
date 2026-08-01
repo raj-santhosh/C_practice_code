@@ -1,0 +1,29 @@
+WAP print 5th and 8th prime number
+#include <stdio.h>
+int main()
+{
+    int num, i, count = 0, prime;
+    for(num = 7; ; num++)
+    {
+        prime = 1;
+        for(i = 2; i <= num / 2; i++)
+        {
+            if(num % i == 0)
+            {
+                prime = 0;
+                break;
+            }
+        }
+
+        if(prime)
+        {   count++;
+            if(count == 5)
+                printf("5th prime = %d\n", num);
+            if(count == 8)
+            {
+                printf("8th prime = %d\n", num);
+                break;
+            }
+        }
+    }
+  
