@@ -1,0 +1,22 @@
+WAP count all set and clear bit in array
+#include<stdio.h>
+int main(){
+      int a[5]={10,15,64,100,511},i;
+        int b[5],
+        pos,clear=0,set=0;
+        for(i=0 ;i<5 ;i++)
+        {
+                set=0;
+                for(pos=31 ;pos>=0 ;pos--)
+                {       if(a[i]>>pos&1)
+                                set++;
+                }
+                b[i]=set;
+
+        }
+
+        for(i=0 ;i<5 ;i++)
+                printf("b:%d\n",b[i]);
+printf("set count :%d ,clear count :%d",set,clear);
+return 0;
+}
