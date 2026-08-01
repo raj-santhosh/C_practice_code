@@ -1,0 +1,20 @@
+WAP print prime from 100 ,count and add
+#include<stdio.h>
+int main(){
+        int i,num,c =0,add =0;
+        for(num =100 ; c<10 ;num++)
+        {       for(i=2 ; i<num ;i++)
+                {
+                        if(!(num %i))
+                                break;
+                }
+                if(num == i)
+                {
+                        printf("%d\n",num);
+                        c++;
+                        add += num;
+                }
+        }
+         printf("count :%d......add:%d\n",c,add);
+        return 0;
+}
