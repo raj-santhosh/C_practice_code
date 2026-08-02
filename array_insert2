@@ -1,4 +1,4 @@
-WAP insert 10 on sorted array
+WAP to C to insert 10 on sorted place in sorted array.
 #include<stdio.h>
 int main()
 {
