@@ -1,7 +1,7 @@
 WAP insert 99 in 0th index 88 in 1st index on array element
 #include<stdio.h>
 int main(){
-        int a[9]={30,11,45,34,14,8,50},n1=99,n2=88;
+        int a[9]={30,11,45,34,14,8,50};
         int i,j,len;
         for(i=0; i<9 ;i++)
                 printf("%d ",a[i]);
