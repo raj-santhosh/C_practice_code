@@ -1,4 +1,4 @@
-WAP delete 1st digit all element in the array.
+WAP in C to delete 0th bit  of all array elements.
 #include<stdio.h>
 int main()
 {
