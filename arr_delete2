@@ -1,0 +1,28 @@
+WAP in C to delete 2nd,3rd index  from array 
+
+#include<stdio.h>
+int main()
+{       int a[5]={99,88,77,66,55};
+        int pos1,pos2,i,j,ele;
+        ele=sizeof(a)/sizeof(a[0]);
+        printf("enter index:");
+        scanf("%d %d",&pos1,&pos2);
+
+        for(i=0 ;i<ele ;i++)
+        {
+                if(i==pos1)
+                {       for(j=i;j<4;j++)
+                                a[j]=a[j+1];
+                                ele--;
+                }
+                if(pos1<pos2)
+                        pos2--;
+                if(i==pos2)
+                {
+                        for(j=i;j<3;j++)
+                                a[j]=a[j+1];
+                        ele--;
+                }
+        }
+return 0;
+}
