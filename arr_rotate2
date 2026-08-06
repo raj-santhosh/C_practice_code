@@ -1,0 +1,21 @@
+WAP in C to left rotate array 2 times in same array
+#include<stdio.h>
+int main()
+{
+        int a[7]={11,21,31,41,51,61,71};
+        int ele,i,j,rot,t;
+        ele=sizeof(a)/sizeof(a[0]);
+        printf("enter no rotate:");
+        scanf("%d",&rot);
+        for(i=0;i<rot;i++)
+        {
+                t=a[0];
+                for(j=0 ;j<ele ;j++)
+                        a[j]=a[j+1];
+
+                a[ele-1]=t;
+        }
+        for(i=0;i<ele;i++)
+                printf("%d ",a[i];
+return 0;
+}
