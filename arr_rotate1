@@ -1,0 +1,22 @@
+WAP in C to right rotate array 3 times in same array.
+#include<stdio.h>
+int main()
+{  
+        int a[7]={11,21,31,41,51,61,71};
+        int ele,i,j,rot,k,t;
+        ele=sizeof(a)/sizeof(a[0]);
+        printf("enter no rotate:");
+                scanf("%d",&rot);
+
+        for(i=0,k=0;i<rot;i++)
+        {
+                t=a[ele-1];
+                for(j=ele;j>0;j--)
+                        a[j]=a[j-1];
+
+                a[k]=t;
+        }
+        for(i=0;i<ele;i++)
+                printf("%d ",a[i]);
+return 0;
+}
