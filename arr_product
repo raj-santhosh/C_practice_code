@@ -1,0 +1,22 @@
+WAP in C to product of digit of all array elements.
+#incldue<stio.h>
+int main(){
+        int b,a[5]={11,202,234,456,90},ele,i;
+        ele=sizeof(a)/sizeof(a[0]);
+        int temp,p,dig;
+
+        for(i=0 ;i<ele ;i++)
+        {       p=1;
+                temp=a[i];
+                while(temp)
+                {
+                        dig= temp%10;
+                        p = p*dig;
+                        temp = temp/10;
+                }
+                a[i]=p;
+        }
+        for(i=0 ;i<ele;i++)
+                printf("%d ",a[i]);
+return 0;
+}
