@@ -1,0 +1,26 @@
+WAP in C to store 1st 7 prime number in array
+#include<stdio.h>
+int main(){
+        int a[7];
+        int num,ele,i,j,add,c=0;
+        ele=sizeof(a)/sizeof(a[0]);
+        num=1;
+        for(j=0;j<7;)
+        {
+                for(i=2;i<num;i++)
+                {
+                        if(!(num%i))
+                                break;
+                }
+                if(num==i)
+                {
+                        a[j]=num;
+                        j++;
+                }
+                num++;
+        }
+        for(i=0;i<ele;i++)
+                printf("%d ",a[i]);
+        printf("\n");
+return 0;
+}
