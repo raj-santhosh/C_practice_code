@@ -1,0 +1,21 @@
+10.WAP in C to reverse string using while loop .
+#include<stdio.h>
+int main()
+{
+        char s[10]="gnik noil";
+        char *p=s,*q,t;
+        int len,i;
+        for(len=0;s[len];len++);
+        q= p+(len-1);
+        //q=p+2;  only 3 letter reverse
+        while(p<q)
+        {        t= *p;
+                *p=*q;
+                *q=t;
+
+                p++;
+                q--;
+        }
+        printf("%s",s);
+return 0;
+}
