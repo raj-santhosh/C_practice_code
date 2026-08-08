@@ -1,0 +1,21 @@
+8.WAP in C to check string lenght is prime or not.
+#include<stio.h>
+int str_len(char*p)
+{       int i;
+        for(i=0;p[i];i++);
+        return i;
+}
+int main()
+{       char s[10]="messi";
+        int len ,i;
+        len=str_len(s);
+        for(i=2;i<len;i++)
+        {
+                if(!(len%i))
+                        break; }
+        if(len==i)
+                printf("%s str len:%d is prime number\n",s,len);
+        else
+                printf("%s str len:%d not prime no\n",s,len);
+return 0;
+}
