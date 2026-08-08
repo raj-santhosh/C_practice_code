@@ -1,0 +1,16 @@
+6.WAP in C to print binary of all char in string .
+#include<stdio.h>
+void str_binary(char *p)
+{       int i,pos;
+        for(i=0;p[i];i++)
+        {               for(pos=7;pos>=0;pos--)
+                        printf("%d ",p[i]>>pos&1);
+
+                printf(": %c \n",p[i]);
+        }
+}
+int main(){
+        char s[20]="12abAB";
+        str_binary(s);
+return 0;
+}
