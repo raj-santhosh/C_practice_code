@@ -1,0 +1,18 @@
+7.WAP in C to count set bit all char in string.
+#include<stdio.h>
+void str_setbit(char*p)
+{       int i,pos,c;
+        for(i=0;i[p];i++)
+        {       c=0;
+                for(pos=7;pos>=0;pos--)
+                        if(p[i]>>pos&1)
+                                c++;
+
+          printf("%c set bit:%d\n",p[i],c);
+        }
+}
+int main(){
+        char s[10]="bcd";
+        str_setbit(s); 
+return 0;
+}
