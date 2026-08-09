@@ -1,0 +1,16 @@
+WAP in C to count words in given string using goto.
+#include<stdio.h>
+int main(){
+        char s[20]="h3i 5d#f2 cs";
+        int i,j,c=0;
+        i=0;
+l:
+        if(s[i]>='a' && s[i]<='z')
+                c++;
+
+                i++;
+        if(s[i])
+        goto l;
+                printf("word count:%d",c);
+return 0;
+}
