@@ -1,0 +1,24 @@
+WAP in C to delete prime digit from string.
+#incldue<stdio.h>
+int main(){
+        char s[20]="abc3456567abc";
+        int i,j,k,temp;
+        for(i=0;s[i];i++)
+        {
+                if(s[i]>='0' && s[i]<='9')
+                {       temp =s[i]-48;
+                  for(k=2;k<temp;k++)
+                  {
+                          if(!(temp%k))
+                                  break;
+                  }
+                  if(temp==k)
+                  {      for(j=i;s[j];j++)
+                             s[j]=s[j+1];
+                    i--;
+                  }
+                }
+        }
+        printf("%s",s);
+return 0;
+}
