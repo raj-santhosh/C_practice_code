@@ -1,0 +1,16 @@
+WAP in C to delete first 3 char from string
+#include<stdio.h>
+int main(){
+        char s[20]="optimus prime";
+        int i,j,c=0;
+        while(c<3)
+        {
+                for(i=0;s[i];i++)
+                {
+                        s[i]=s[i+1];
+                }
+                c++;
+        }
+        printf("%s\n",s);
+return 0;
+}
