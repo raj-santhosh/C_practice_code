@@ -1,0 +1,17 @@
+12. WAP in C to delete desired char from string.
+#include<stdio.h>
+int main(){
+        char s[20]="acbcccabc",ch='c';
+        int i,j,c=0,len;
+        for(len=0;s[len];len++);
+        i=len-1;
+        while(c<2)
+        {
+                if(s[i]==ch)
+                {       c++;
+                        for(j=i;s[j];j++)
+                                s[j]=s[j+1];
+                }i--;
+        }
+        printf("after delte c:%s\n",s);
+}
