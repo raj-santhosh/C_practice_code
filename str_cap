@@ -1,0 +1,14 @@
+WAP in C to Capitalize first letter of word in string.
+#include<stdio.h>
+int main(){
+        char s[30]="spiderman batman thor";
+        int i,j,c;
+        for(i=0;s[i];i++)
+        {
+                if(s[i]!=' ' && ((i==0 || s[i-1]==' ' )))
+                        if(s[i]>='a' && s[i]<='z')
+                                s[i]^=32;
+        }
+        printf("%s",s);
+return 0;
+}
