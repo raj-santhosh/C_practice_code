@@ -1,0 +1,17 @@
+WAP in C to reverse last word in string
+#include<stdio.h>
+int main(){
+        char s[20]="vector india 123";
+        char *p,*q,t;
+        p=s+13;
+        q=p+2;
+        while(p<q)
+        {       t=*p;
+                *p=*q;
+                *q=t;
+                  p++;
+                  q--;
+        }
+        printf("%s",s);
+return 0;
+}
