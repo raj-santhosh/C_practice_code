@@ -1,0 +1,14 @@
+WAP in C to print last word from string using goto.
+#include<stdio.h>
+int main(){
+        char s[20]="vector india coding";
+        int i,c=0;
+l:
+        if(s[i]==' ')
+                c++;
+                if(c==2)
+                        printf("%c",s[i]);
+                i++;
+        if(s[i])
+                goto l;
+return 0;}
