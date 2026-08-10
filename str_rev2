@@ -1,0 +1,18 @@
+WAP in C to reverse 1st word in string using pointer
+#include<stdio.h>
+int main(){
+        char s[20]="vector india pvt";
+        char *p,*q,t;
+        p=s;
+        q=p+5;
+        while(p<q)
+        {
+                t=*p;
+                *p=*q;
+                *q=t;
+                    p++;
+                    q--;
+        }
+        printf("%s",s);
+return 0;
+}
