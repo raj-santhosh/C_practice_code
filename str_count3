@@ -1,0 +1,14 @@
+ WAP in C to count vowels in string using do-while .
+#include<stdio.h>
+int main(){
+        char s[20]="abc pqr aeio";
+        int i=0,c=0;
+        do
+        {
+                if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u')
+                        c++;
+                i++;
+        } while(s[i]);
+        printf("vowels count:%d",c);
+return 0;
+}
