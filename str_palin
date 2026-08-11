@@ -1,0 +1,22 @@
+WAP in C to check string is Palindrome or not.
+#include<stdio.h>
+int main(){
+        char s[20]="racecar",a[20];
+        int i,j,c=0,len;
+        for(len=0;s[len];len++);
+        i=0;
+        j=len-1;
+        while(s[i])
+        {       a[i]=s[j];
+                i++;
+                j--;
+        }
+        for(i=0;s[i];i++)
+                if(s[i]==a[i])
+                        c++;
+        if(c==len)
+                printf("%s yes palindrome\n",s);
+        else
+                printf("%s not palindrome\n",s);
+return 0;
+}
