@@ -1,0 +1,13 @@
+WAP in C to remove conjucutive spaces in string.
+#include<stdio.h>
+int main(){
+        char s[20]="abc  coding  siriji";
+        int i,j;
+        for(i=0;s[i];i++)
+        {     if(s[i]==' '&& s[i+1]==' ')
+                        for(j=i;s[j];j++)
+                                s[j]=s[j+1];
+        }
+        printf("%s",s);
+return 0;
+}
