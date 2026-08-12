@@ -1,0 +1,27 @@
+WAP in C to reverse all words in string.
+#include<stdio.h>
+int main(){
+        char s[20]="coding sirji vector",t;
+        int i,j,k;
+        for(i=0;s[i];)
+        {
+                j=i;
+                while(s[j]&&s[j]!=' ')
+                        j++;
+                k=j-1;
+                while(i<k)
+                {
+                        t=s[k];
+                        s[k]=s[i];
+                        s[i]=t;
+                        i++;
+                        k--;
+                }
+                if(s[j])
+                        i=j+1;
+                else
+                        break;
+        }
+        printf("%s",s);
+return 0;
+}
