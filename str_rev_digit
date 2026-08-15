@@ -1,0 +1,26 @@
+42.WAP in C to reverse word having digit in string.
+#include<stdio.h>
+int main(){
+        char s[30]="coding 123abc vector ptr1",t;
+        int i,j,k,l,st=0,c;
+        for(i=0;s[i];i++)
+        {
+                st=i;
+                c=0;
+                for(j=i; s[j]!=' ' && s[j] ;j++)
+                        if(s[j]>='0'&&s[j]<='9')
+                                c++;
+                        if(c>0)
+                        {
+                                for(k=st,l=j-1;k<l;k++,l--)
+                                {
+                                        t=s[k];
+                                        s[k]=s[l];
+                                        s[l]=t;
+                                }
+                        }
+                i=j;
+        }
+        printf("%s\n",s);
+return 0;
+}
