@@ -1,0 +1,27 @@
+WAP in C to reverse word lenght  > 4 in string.
+#include<stdio.h>
+int main(){
+        char s[20]={"ias abcde mkdir"},t;
+        int i,j,k,c,l;
+        for(i=0;s[i];i++)
+        {       c=0;
+                for(j=i; s[j]!=' '&& s[j] ;j++)
+                        c++;
+                if(c>4)
+                {
+                        for(k=i,l=j-1;k<l;k++,l--)
+                        {
+                                t=s[k];
+                                s[k]=s[l];
+                                s[l]=t;
+                        }
+                }
+                if(s[j])
+
+                        i=j;
+                else
+                        break;
+        }
+                printf("%s",s);
+return 0;
+}
