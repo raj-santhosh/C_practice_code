@@ -1,0 +1,28 @@
+2.WAP in C using function to reverse  all elements of array ,store results in another array.
+#include<stdio.h>
+void rev_fun(int *a,int*b,int ele)
+{
+        int i,dig,temp,rev;
+        for(i=0;i<ele;i++)
+        {
+                temp=a[i];
+                for(rev=0;temp ;temp/=10)
+                {
+                        dig=temp%10;
+                        rev=rev*10+dig;
+                }
+                b[i]=rev;
+        }
+        for(i=0;i<ele;i++)
+                printf("%d ",b[i]);
+}
+int main(){
+        int a[6],b[6];
+        int ele,i;
+        ele=sizeof(a)/sizeof(a[0]);
+        printf("enter arr element:");
+        for(i=0;i<ele;i++)
+                scanf("%d",&a[i]);
+        rev_fun(a,b,ele);
+return 0;
+}
