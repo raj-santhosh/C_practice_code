@@ -1,0 +1,27 @@
+1.WAP in C using function to sum of digit of all ele in array,store results in another array.
+#include<stdio.h>
+void sum_fun(int *a,int*b,int ele)
+{
+        int i,j,sum,dig,temp;
+        for(i=0;i<ele;i++)
+        {       temp=a[i];
+                sum=0;
+                while(temp)
+                {
+                        dig=temp%10;
+                        sum=sum+dig;
+                        temp/=10;
+                }
+                b[i]=sum;
+        }
+        for(i=0;i<ele;i++)
+                printf("%d ",b[i]);
+}
+int main(){
+        int a[6]={1,22,121,34,78,444},b[6];
+        int ele;
+        ele=sizeof(a)/sizeof(a[0]);
+        sum_fun(a,b,ele);
+
+return 0;
+}
