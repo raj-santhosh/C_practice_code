@@ -1,0 +1,30 @@
+WAP in C using function to delete 1st digits of all elements in array .
+#include<stdio.h>
+void del_fun(int *a ,int ele)
+{
+        int i,j,temp,c;
+        for(i=0;i<ele;i++)
+        {
+                temp=a[i];
+                c=1;
+                while(temp>=10)
+                {
+                        temp=temp/10;
+                        c=c*10;
+                }
+                a[i]=a[i]%c;
+        }
+        for(i=0;i<ele;i++)
+                printf("%d ",a[i]);
+}
+int main()
+{
+        int a[6];
+        int ele,i;
+        ele=sizeof(a)/sizeof(a[0]);
+        printf("enter arr element:");
+        for(i=0;i<ele;i++)
+                scanf("%d",&a[i]);
+        del_fun(a,ele);
+return 0;
+}
