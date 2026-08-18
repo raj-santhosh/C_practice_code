@@ -1,0 +1,29 @@
+5.WAP in C using function to count -ve ele(bitwise op) and delete -ve elements in array
+#include<stdio.h>
+int count_del(int *a,int ele)
+{
+        int i,j,c=0;
+        for(i=0;i<ele;i++)
+        {
+                if(a[i]>>31&1)
+                {
+                        c++;
+                        for(j=i;j<ele-1;j++)
+                                a[j]=a[j+1];
+                        ele--;
+                        i--;
+
+                }
+        }
+return c;
+}
+int main()
+{
+        int a[6]={-2,2,-5,-12,5,-7},ele,i,c;
+        ele=sizeof(a)/sizeof(a[0]);
+        c=count_del(a,ele);
+        printf("-ve number count: %d\n",c);
+        for(i=0;i<ele-c;i++)
+                printf("%d ",*(a+i)); printf("\n");
+return 0;
+}
