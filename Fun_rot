@@ -1,0 +1,23 @@
+6.WAP in C using function to right rotate array 2 times.
+#include<stdio.h>
+void rotate_arr(int *a,int ele,int rot)
+{
+        int i,j,t;
+        for(i=0 ;i<rot ;i++)
+        {       t=a[ele-1];
+                for(j=ele-1;j>0;j--)
+                        a[j]=a[j-1];
+                a[0]=t;
+        }
+}
+int main()
+{
+        int a[6]={-2,2,-5,-12,5,-7},ele,i,r;
+        ele=sizeof(a)/sizeof(a[0]);
+        printf("how rotate times: ");
+        scanf("%d",&r);
+        rotate_arr(a,ele,r);
+        for(i=0;i<ele;i++)
+                printf("%d ",*(a+i));
+return 0;
+}
