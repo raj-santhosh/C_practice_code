@@ -1,0 +1,26 @@
+10.WAP in C using function to delete all digits in strings and count deleted digits .
+#include<stdio.h>
+void del_str(char*s)
+{
+        int i,j,c=0;
+        for(i=0;s[i];i++)
+        {
+                if(s[i]>='0' && s[i]<='9')
+                {
+                        c++;
+                        for(j=i;s[j];j++)
+                                s[j]=s[j+1];
+                        i--;
+                }
+
+        }
+        printf("digit count :%d\n",c);
+}
+int main()
+{
+        char s[20]="a1b2c3d4123";
+        del_str(s);
+        printf("%s\n",s);
+
+return 0;
+}
