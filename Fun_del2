@@ -1,0 +1,26 @@
+WAP in C using function to delete the duplicate  char  from given string.
+#include<stdio.h>
+void del_dup(char *s)
+{
+        int i,j,k;
+        for(i=0;s[i];i++)
+        {
+                for(k=i+1;s[k];k++)
+                {
+                        if(s[i]==s[k])
+                        {
+                                for(j=k;s[j];j++)
+                                        s[j]=s[j+1];
+                                k--;
+                        }
+                }
+        }
+}
+int main()
+{
+        char s[20]="abaca abdbccaa";
+        int i;
+        del_dup(s);
+        printf("%s\n",s);
+return 0;
+}
