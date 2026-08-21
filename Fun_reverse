@@ -1,0 +1,54 @@
+#include<stdio.h>
+char* my_strchr(const char*p,char ch)
+{
+        int i;
+        for(i=0;p[i];i++)
+        {
+                if(p[i]==ch)
+                        return p+i; //&p[i]
+        }
+        return 0;
+}
+void my_strrev1(char *p,char *q)
+{
+        char t;
+        while(p<q)
+        {
+                t =*p;
+                *p=*q;
+                *q=t;
+                        p++;
+                        q--;
+        }
+
+}
+void my_str_rev2(char* p)
+{
+        char *q=p,t;
+        while(*q)
+        {
+                q++;
+        }
+        q--;
+        while(p<q)
+        {
+                t=*p;
+                *p=*q;
+                *q=t; p++; q--; }
+}
+int main(){
+        char s[40],*p,*q;
+        printf("enter string :");
+        scanf("%[^\n]",s);
+        printf("---Before... %s\n",s);
+        p=s;
+        while(q=my_strchr(p,' '))
+        {
+                my_strrev1(p,q-1);
+                p=q+1;
+        }
+        my_str_rev2(p);  // for last word rev
+        printf("After rev:%s\n",s);
+
+return 0;
+}
