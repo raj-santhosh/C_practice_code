@@ -1,3 +1,4 @@
+WAP in C using function to revesre all word in string .
 #include<stdio.h>
 char* my_strchr(const char*p,char ch)
 {
