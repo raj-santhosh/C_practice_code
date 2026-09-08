@@ -1,0 +1,21 @@
+#include<stdio.h>
+int fact (int n)
+{
+        static int f=1;
+        if(n)
+        {
+                f=f*n;
+                n--;
+                fact(n);
+        }
+        return f;
+}
+int main()
+{
+        int r,num;
+        printf("enter int num:");
+        scanf("%d",&num);
+        r=fact(num);
+        printf("fact:%d\n",r);
+        return 0;
+}
