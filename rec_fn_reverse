@@ -1,0 +1,18 @@
+WAP recursive function to revese the given number.
+#include<stdio.h>
+int rev_num(int n)
+{
+        if(n==0)
+                return 0;
+        else
+                return (n%10)rev(n/10);
+
+}
+int main()
+{
+        int n;
+        printf("enter a num:");
+        scanf("%d",&n);
+        printf("reverse num:%d\n",rev_num(n));
+return 0;
+}
