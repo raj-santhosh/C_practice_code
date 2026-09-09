@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(){
+        int a[2][2],b[2][2],c2[2][2];
+        int r,c,i,j;
+        r=sizeof(a)/sizeof(a[0]);
+        c=sizeof a[0]/sizeof(a[0][0]);
+        printf("enter 1st matrix:\n");
+        for(i=0;i<r;i++)
+                for(j=0;j<c;j++)
+                        scanf("%d",&a[i][j]);
+
+        printf("enter 2nd matrix:\n");
+        for(i=0;i<r;i++)
+                for(j=0;j<c;j++)
+                        scanf("%d",&b[i][j]);
+
+        for(i=0;i<r;i++)
+                for(j=0;j<c;j++)
+                        c2[i][j]=a[i][j]+b[i][j];
+
+        printf("Addition:\n");
+        for(i=0;i<r;i++)
+                for(j=0;j<c;j++)
+                printf("%d ",c2[i][j]);
+
+        printf("\n");
+return 0;
+}
