@@ -1,0 +1,47 @@
+WAP to replaced character from the file...
+#include<stdio.h>
+#include<stdlib.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=4)
+        {
+                printf("usage:./a.out fname ch char\n");
+                return 1;
+        }
+        FILE *fp=fopen(argv[1],"r+");
+        if(fp==0)
+        {
+                printf("FILE is not present...\n");
+                return 1;
+        }
+        char ch;
+        int c=0,i=0;
+        while((ch=fgetc(fp))!=-1)
+                c++;
+        rewind(fp);
+        char *p=malloc(c+1);
+        while((ch=fgetc(fp))!=EOF)
+                p[i++]=ch;
+        p[i]='\0';
+        rewind(fp);
+        for(i=0;p[i];i++)
+        {
+                if(p[i]==argv[2][0])
+                        p[i]=argv[3][0];
+        }
+        for(i=0;p[i];i++)
+                fputc(p[i],fp);
+        fclose(fp);
+
+        method=>
+        /*      while((ch=fgetc(fp))!=-1)
+                        if(ch==argv[2][0])
+                        {
+                                fseek(fp,-1,SEEK_CUR);
+                                fputc(argv[3][0],fp);
+                        }
+          */
+return 0;
+}
+  
+
