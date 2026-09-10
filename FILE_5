@@ -1,0 +1,18 @@
+WAP take 5 strings put it file one by one...
+#include<stdio.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=6)
+        {
+                printf("usage:./a.out st1 st2 st3 st4 st5...\n");
+                return 1;
+        }
+        FILE *fp=fopen("input.txt","w");
+        for(int i=1;i<argc;i++)
+        {
+                fputs(argv[i],fp);
+                fputs("\n",fp);
+        }
+        fclose(fp);
+return 0;
+}
