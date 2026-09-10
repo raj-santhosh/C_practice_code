@@ -1,0 +1,24 @@
+WAP to copy a data source file to destination file
+#include<stdio.h>
+int main(int argc,char **argv)
+{
+        if(argc!=3)
+        {
+                printf("usage:./my_cp srcf destf:\n");
+                return 1;
+        }
+        FILE *fs,*fd;
+        fs=fopen(argv[1],"r");
+        if(fs==0)
+        {
+                printf("Source File is not present...\n");
+                return 1;
+        }
+        fd=fopen(argv[2],"w");
+        char ch;
+        while((ch=fgetc(fs))!=EOF)
+                fputc(ch,fd);
+        fclose(fs);
+        fclose(fd);
+return 0;
+}
