@@ -1,0 +1,43 @@
+WAP copy one source file to multiple files
+#include<stdio.h>
+int main(int argc,char **argv)
+{
+        if(argc<3)
+        {
+                printf("usage:./my_cp srcf destf:\n");
+                return 1;
+        }
+        FILE *fp,*fd;
+        int op,i;
+        fp=fopen(argv[1],"r");
+        if(fp==0)
+        {
+                printf("Source File is not present...\n");
+                return 1;
+        }
+        for(i=2;i<argc;i++)
+        {
+                fd=fopen(argv[i],"r");
+                if(fd==0)
+                {
+l:
+                        fd=fopen(argv[i],"w");
+
+                        char ch;
+                        while((ch=fgetc(fp))!=EOF)
+                                fputc(ch,fd);
+                        rewind(fp);
+                }
+                else
+                {       printf("Destination file is present \n");
+                        printf("op:1 truncate and rewrite\n");
+                        printf("op:2 dont truncate\n");
+                        scanf("%d",&op);
+                        if(op==1)
+                                goto l;
+                        else
+                                return 0;
+                }
+        }
+return 0;
+}
