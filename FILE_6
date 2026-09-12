@@ -1,0 +1,15 @@
+WAP read a data in a FILE and store it print it.
+#include<stdio.h>
+int main()
+{
+        char s[20];
+        FILE *fp=fopen("data","r");
+                if(fp==0)
+                {
+                        printf("File is not present...\n");
+                        return 1;
+                }
+        fgets(s,14,fp);
+        printf("s=%s\n",s);
+return 0;
+}
