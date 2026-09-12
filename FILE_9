@@ -1,0 +1,43 @@
+WAP reverse the particular word in the FILE and count
+#include<stdio.h>
+#include<string.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=3)
+        {
+                printf("usage:./a.out fname string...\n");
+                return 1;
+        }
+
+        FILE *fp=fopen(argv[1],"r+");
+        if(fp==0)
+        {
+                printf("File is not present...\n");
+                return 1;
+        }
+
+        int i,j,len;
+        char ch,temp[20];
+
+        strcpy(temp,argv[2]);
+        len=strlen(temp);
+        for(i=0,j=len-1;i<j;i++,j--)
+        {
+                ch=temp[i];
+                temp[i]=temp[j];
+                temp[j]=ch;
+        }
+        char s[20];
+        int c=0;
+        while(fscanf(fp,"%s",s)!=-1)
+        {
+                if(strcmp(s,argv[2])==0)
+                {
+                        fseek(fp,-len,SEEK_CUR);
+                        fprintf(fp,"%s",temp);
+                        c++;
+                }
+        }
+        printf("How many times present word=%d\n",c);
+return 0;
+}
