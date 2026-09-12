@@ -1,0 +1,20 @@
+WAP scan 5 students records rollno,name and marks store into FILE...
+#include<stdio.h>
+typedef struct st{
+        int rollno;
+        char name[10];
+        float marks;
+}st;
+int main()
+{
+        st s1;
+        int i,j;
+        FILE *fp=fopen("input.txt","w");
+        for(i=0;i<5;i++)
+        {
+                scanf("%d %s %f",&s1.rollno,s1.name,&s1.marks);
+                fprintf(fp,"%d %s %f\n",s1.rollno,s1.name,s1.marks);
+        }
+
+return 0;
+}
