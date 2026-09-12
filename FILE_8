@@ -1,0 +1,77 @@
+WAP scan 5 student records and take user input for sorting rollno,name and marks store in to other FILE
+#include<stdio.h>
+#include<string.h>
+typedef struct st{
+        int rollno;
+        char name[10];
+        float marks;
+}st;
+int main()
+{
+        st s[5],t;
+        int i,j,ele;
+        ele=sizeof(s)/sizeof(s[0]);
+        FILE *fp=fopen("input.txt","r");
+        FILE *fd=fopen("sorted","w");
+        for(i=0;i<5;i++)
+        {
+                fscanf(fp,"%d %s %f",&s[i].rollno,s[i].name,&s[i].marks);
+        }
+        int op;
+        printf("op 1:sort rollno...\nop 2:sort name\nop 3:sort marks..:");
+        scanf("%d",&op);
+        switch(op)
+        {
+                case 1:
+                        for(i=0;i<ele-1;i++)
+                        {
+                                for(j=1+i;j<ele;j++)
+                                {
+                                        if(s[i].rollno>s[j].rollno)
+                                        {
+                                                t=s[i];
+                                                s[i]=s[j];
+                                                s[j]=t;
+                                        }
+                                }
+                        }
+                        for(i=0;i<ele;i++)
+                                fprintf(fd,"%d %s %f\n",s[i].rollno,s[i].name,s[i].marks);
+                        break;
+                case 2:
+                        for(i=0;i<ele-1;i++)
+                        {
+                                for(j=1+i;j<ele;j++)
+                                {
+                                        if(strcmp(s[i].name,s[j].name)>0)
+                                        {
+                                                t=s[i];
+                                                s[i]=s[j];
+                                                s[j]=t;
+                                        }
+                                }
+                        }
+
+                        for(i=0;i<ele;i++)
+                                fprintf(fd,"%d %s %f\n",s[i].rollno,s[i].name,s[i].marks);
+                        break;
+                  case 3:
+                        for(i=0;i<ele-1;i++)
+                        {
+                                for(j=1+i;j<ele;j++)
+                                {
+                                        if(s[i].marks > s[j].marks)
+                                        {
+                                                t=s[i];
+                                                s[i]=s[j];
+                                                s[j]=t;
+                                        }
+                                }
+                        }
+
+                        for(i=0;i<ele;i++)
+                                fprintf(fd,"%d %s %f\n",s[i].rollno,s[i].name,s[i].marks);
+                        break;
+        }
+return 0;
+}
