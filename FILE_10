@@ -1,0 +1,18 @@
+//1.WAP to Convert Lower to Upper and Upper to Lower Cases of a given file.
+#include<stdio.h>
+int main()
+{
+        FILE*fp=fopen("d1","r+");
+        char ch;
+        while((ch=fgetc(fp))!=-1)
+        {
+                if(ch!=' ')
+                {
+                        ch=ch^32;
+                        fseek(fp,-1,SEEK_CUR);
+                        fputc(ch,fp);
+                }
+        }
+return 0;
+}
+~
