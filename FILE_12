@@ -1,0 +1,22 @@
+// WAP count ERROR,WARNING AND INFO messages from a FILE and Store in other FILE...
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        int in=0,war=0,er=0;
+        char s[50];
+        FILE *fp=fopen("input","r");
+        while(fgets(s,30,fp))
+        {
+                if(strstr(s,"INFO")!=0)
+                        in++;
+                else if(strstr(s,"WARNING")!=0)
+                        war++;
+                else
+                        er++;
+        }
+        printf("INFO count:%d\nWARNING count:%d\nERROR count:%d\n",in,war,er);
+        FILE *fd=fopen("report.txt","w");
+        fprintf(fd,"INFO count:%d\nWARNING count:%d\nERROR count:%d\n",in,war,er);
+return 0;
+}
