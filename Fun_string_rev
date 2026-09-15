@@ -1,0 +1,47 @@
+#include<stdio.h>
+int check_vowel(char *s){
+        int i,flag;
+        char *p;
+        for(i=0;s[i];)
+        {
+                flag=0;
+                p=s+i;
+                while(s[i] && s[i]!=' ')
+                {
+                        if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u')
+                                flag=1;
+
+                        i++;
+                }
+                if(flag)
+                        rev(p);
+
+                while(s[i]==' ')
+                        i++;
+        }
+
+}
+void rev(char *s)
+{
+        int i=0,j;
+        char t;
+        for(j=0;s[j] && s[j]!=' ';j++);
+        j--;
+        while(i<j)
+        {
+                t=s[i];
+                s[i]=s[j];
+                s[j]=t;
+                        i++;
+                        j--;
+        }
+}
+int main()
+{
+        char s[20]="123apple std goa";
+
+        check_vowel(s);
+        printf("Reverse only vowels words:%s\n",s);
+return 0;
+}
+~
