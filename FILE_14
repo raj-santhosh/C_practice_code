@@ -1,4 +1,4 @@
-//WAP create new FILE store the data is sorted rollno,name and marks student record 
+//WAP read the students record from a FILE,create new FILE store the data is sorted rollno,name and marks student record 
 #include<stdio.h>
 #include<string.h>
 typedef struct st{
@@ -18,7 +18,7 @@ int main()
                 fscanf(fp,"%d %s %f",&s[i].rollno,s[i].name,&s[i].marks);
         }
         int op;
-        printf("op 1:sort rollno...\nop 2:sort name\nop 3:sort marks..:");
+        printf("op 1:sort rollno...\n op 2:sort name \n op 3:sort marks\n");
         scanf("%d",&op);
         switch(op)
         {
@@ -27,7 +27,7 @@ int main()
                         {
                                 for(j=1+i;j<ele;j++)
                                 {
-                                        if(s[i].rollno>s[j].rollno)
+                                        if(s[i].rollno > s[j].rollno)
                                         {
                                                 t=s[i];
                                                 s[i]=s[j];
@@ -43,7 +43,7 @@ int main()
                         {
                                 for(j=1+i;j<ele;j++)
                                 {
-                                        if(strcmp(s[i].name,s[j].name)>0)
+                                        if(strcmp(s[i].name,s[j].name) > 0)
                                         {
                                                 t=s[i];
                                                 s[i]=s[j];
