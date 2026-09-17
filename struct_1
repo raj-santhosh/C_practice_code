@@ -1,0 +1,37 @@
+//WAP take 5 student record sort rollno and print using structure 
+#include<stdio.h>
+struct st{
+        int rollno;
+        char name[10];
+        float marks;
+};
+int main()
+{
+        struct st s[5],t;
+        int i,j,ele;
+        ele=sizeof(s)/sizeof(s[0]);
+        for(i=0;i<ele;i++)
+        {
+                printf("enter the roll no:");
+                scanf("%d",&s[i].rollno);
+                printf("enter the name:");
+                scanf("%s",s[i].name);
+                printf("enter the marks:");
+                scanf("%f",&s[i].marks);
+        }
+        for(i=0;i<ele-1;i++)
+        {
+                for(j=0;j<ele-1-i;j++)
+                {
+                        if(s[j].rollno>s[j+1].rollno)
+                        {
+                                t=s[j];
+                                s[j]=s[j+1];
+                                s[j+1]=t;
+                        }
+                }
+        }
+        for(i=0;i<ele;i++)
+                printf("%d %s %f\n",s[i].rollno,s[i].name,s[i].marks);
+return 0;
+}
