@@ -1,0 +1,37 @@
+Write a program to Implement grep command
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main(int argc,char *argv[])
+{
+        if(argc!=3)
+        {
+                printf("Usage: ./a.out word filename\n");
+                return 0;
+        }
+        FILE *fp=fopen(argv[2],"r");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+        char ch;
+        int count=0,bigline_len=0;
+        while((ch=fgetc(fp))!=EOF)
+        {
+                ++count;
+                if(ch=='\n')
+                {
+                        if(count>bigline_len)
+                                bigline_len=count;
+                        count=0;
+                }
+        }
+        rewind(fp);
+        char *a=(char *)malloc((bigline_len+1)*sizeof(char));
+        while((fgets(a,bigline_len+1,fp))!=NULL)
+        {
+                if(strstr(a,argv[1])!=NULL)
+                        printf("%s",a);
+        }
+}
