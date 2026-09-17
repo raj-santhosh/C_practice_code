@@ -1,0 +1,33 @@
+// WAP sorting 5 strings using char array pointer.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        char s[5][10];
+        char *p[5],*t;
+        int i,j,ele;
+        ele=sizeof(s)/sizeof(s[0]);
+
+        for(i=0;i<ele;i++)
+                p[i]=s[i];
+
+        printf("Enter string :\n");
+        for(i=0;i<ele;i++)
+                scanf("%s",s[i]);
+
+        for(i=0;i<ele-1;i++)
+                for(j=0;j<ele-1-i;j++)
+                {
+                        if(strcmp (p[j],p[j+1]) >0)
+                        {
+                                t=p[i];
+                                p[j]=p[j+1];
+                                p[j+1]=t;
+                        }
+                }
+        printf("After pointer\n");
+        for(i=0;i<ele;i++)
+                printf("%s ",p[i]);
+        return 0;
+return 0;
+}
