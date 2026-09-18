@@ -1,0 +1,30 @@
+Write a Program to understand fprintf() operation...
+#include<stdio.h>
+int main()
+{
+        char ch='S';
+        int x=132;
+        float f=23.5;
+        char a[]="Batman";
+        FILE *fp=fopen("New.txt","w");
+        fprintf(fp,"%c %x %f %s\n",ch,x,f,a);
+        fclose(fp);
+}
+/******************************************************************************************************/
+Write a program to understand fscanf() operation
+#include<stdio.h>
+int main()
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+        FILE *fp=fopen("DATA.txt","r");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+        fscanf(fp,"%c %d %f %s",&ch,&x,&f,a);
+        printf("ch=%c\n x=%d\n f=%f\n a=%s\n",ch,x,f,a);
+}
