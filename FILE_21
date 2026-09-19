@@ -1,0 +1,20 @@
+//WAP to Capitalize First Letter of every Word in a file
+#include<stdio.h>
+int main()
+{
+        FILE*fp=fopen("d2","r+");
+        char s[20];
+        int i;
+        fgets(s,20,fp);
+
+        for(i=0;s[i];i++)
+        {
+                if(s[i]!=' ' &&(i==0 || s[i-1]==' '))
+                        if(s[i]>='a' && s[i]<='z')
+                                s[i]=s[i]^32;
+        }
+        fseek(fp,0,SEEK_SET);
+        fprintf(fp,"%s",s);
+
+return 0;
+}
