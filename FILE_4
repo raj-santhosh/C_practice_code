@@ -33,7 +33,7 @@ int main(int argc,char *argv[])
                 fputc(p[i],fp);
         fclose(fp);
 
-        method=>
+      Another method=>
         /*      while((ch=fgetc(fp))!=-1)
                         if(ch==argv[2][0])
                         {
