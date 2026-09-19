@@ -1,0 +1,20 @@
+Write a program to understand the fwrite() operation
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        char ch='A';
+        int x=10;
+        float f=22.5;
+        char a[]="Vector";
+
+        FILE *fp=fopen("data","w");
+
+        fwrite(&ch,sizeof(char),1,fp);
+        fwrite(&x,sizeof(int),1,fp);
+        fwrite(&f,sizeof(float),1,fp);
+        fwrite(a,sizeof(char),strlen(a)+1,fp);
+
+        fclose(fp);
+}
