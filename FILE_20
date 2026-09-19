@@ -1,0 +1,20 @@
+WAP to understand the concept of fseek() and ftell()
+#include<stdio.h>
+int main()
+{
+        FILE *fp=fopen("data","r");
+        if(fp==NULL)
+        {
+                printf("File doesn't exist\n");
+                return 0;
+        }
+        fseek(fp,5,0);          // fp increments 5 bytes from start position
+        //fseek(fp,5,1);        // fp increments 5 bytes from current position
+        //fseek(fp,-5,2);       // fp decrements 5 bytes from last position
+
+        char ch;
+        ch=fgetc(fp);           //reads character at current position, then pointer advances by 1 
+
+        printf("ch=%c\n",ch);
+        printf("file pointer position:%ld\n",ftell(fp));
+}
