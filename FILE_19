@@ -1,0 +1,18 @@
+WAP to understand the concept of stdin, stdout & stderr
+#include<stdio.h>
+int main()
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+        printf("Enter the char, int, float and string\n");
+
+        fscanf(stdin,"%c %d %f %s",&ch,&x,&f,a);
+        if(x<0)
+        {
+                fprintf(stderr,"ERROR: x cannot be negative\n");
+                return 0;
+        }
+        fprintf(stdout,"%c %d %f %s\n",ch,x,f,a);
+}
