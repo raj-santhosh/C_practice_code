@@ -1,0 +1,12 @@
+Write a Program to understand the concept of “a” File mode.
+#include<stdio.h>
+int main()
+{
+        FILE *fp=fopen("DATA","a");
+        char a[20];
+        printf("Enter the string\n");
+        scanf("%s",a);
+
+        fputs(a,fp);
+        printf("\nData is saved successfully at the end of the file\n");
+}
