@@ -1,0 +1,25 @@
+Write a program that How many no.of times the Particular Word is  Present in a Given File.
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+        FILE *fp=fopen("data.txt","r");
+        if(fp==NULL)
+        {
+                printf("File doesn't Exist\n");
+                return 0;
+        }
+        char b[20];
+        printf("Enter the word to find \n");
+        scanf("%s",b);
+
+        char a[20];
+        int count=0;
+        while(fscanf(fp,"%s",a)!=EOF)
+        {
+                if(strcmp(a,b)==0)
+                        count++;
+        }
+        printf("No. of times %s present in data.txt: %d\n",b,count);
+return 0;
+}
