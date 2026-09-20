@@ -1,0 +1,41 @@
+Design a Menu Using Switch Case for Set, Clear, Toggle a Given Bit in a Given Integer and
+Display the Binary Representation Before and After Selected Operations  of a Given Number.
+
+#include<stdio.h>
+int main()
+{
+        int num,pos,choice;
+        printf("Enter the number: \n");
+        scanf("%d",&num);
+
+        printf("Before Operation\n");
+        for(int i=31;i>=0;i--)
+                printf("%d",(num>>i)&1);
+        printf("\n");
+
+        printf("Enter the position: \n");
+        scanf("%d",&pos);
+        printf("1.Set a Bit\n2.Clear a Bit\n3.Toggle a Bit\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+                case 1:
+                        printf("After Set a Bit\n");
+                        num=num|(1<<pos);
+                        break;
+                case 2:
+                        printf("After Clear a Bit\n");
+                        num=num &~ (1<<pos);
+                        printf("\n");
+                        break;
+                case 3:
+                        printf("After Toggle a Bit\n");
+                        num=num^(1<<pos);
+                        break;
+                default:
+                        printf("Invalid choice! Please Choose one Among the choices 1 2 3.\n");
+        }
+        for(int i=31;i>=0;i--)
+                printf("%d",(num>>i)&1);
+        printf("\n");
+}
