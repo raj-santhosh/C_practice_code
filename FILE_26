@@ -1,0 +1,41 @@
+WAP to Write the structure data to a file & Reads it back from the same file
+#include<stdio.h>
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}a={'S',13,95.5,"spiderman"},a2;
+int main()
+{
+        FILE *fp=fopen("data","wb+");
+        fwrite(&a,sizeof(struct st),1,fp);
+
+        fseek(fp,0,SEEK_SET);
+
+        fread(&a2,sizeof(struct st),1,fp);
+        printf("%c %d %f %s\n",a2.ch,a2.x,a2.f,a2.a);
+
+        fclose(fp);
+}
+
+/***Method 2
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}a={'D',10,23.5,"Dragon"},a2;
+
+int main()
+{
+        FILE *fp=fopen("data","w");
+        fwrite(&a,sizeof(struct st),1,fp);
+        fclose(fp);
+
+        FILE *fp2=fopen("data","r");
+        fread(&a2,sizeof(struct st),1,fp2);
+        printf("%c %d %f %s\n",a2.ch,a2.x,a2.f,a2.a);
+}
