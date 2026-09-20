@@ -1,4 +1,6 @@
 WAP to Write the structure data to a file & Reads it back from the same file
+Note: 1 method using wb+ mode (write binary)
+
 #include<stdio.h>
 struct st
 {
@@ -20,7 +22,7 @@ int main()
         fclose(fp);
 }
 
-/***Method 2
+/-------Method 2 ("w" mode write a data from structure to FILE again read data from file print)
 struct st
 {
         char ch;
