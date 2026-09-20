@@ -1,0 +1,11 @@
+WAP difference between fprintf () and fwrite ()
+
+#include<stdio.h>
+int main(){
+        int x=123456789;
+        FILE *fp=fopen("data","w");
+
+        fprintf(fp,"%d",x);                  // formated data writes the data in 9 bytes
+       // fwrite(&x,sizeof(int),1,fp); // unformated data to write
+return 0;
+}
