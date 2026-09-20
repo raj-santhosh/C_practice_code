@@ -1,0 +1,41 @@
+Write a program to Write the Structure data into a file using fwrite()
+#include<stdio.h>
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}v={'S',13,23.5,"Dragon"};
+int main()
+{
+        FILE *fp=fopen("data","w");
+        fwrite(&v,sizeof(struct st),1,fp);
+        fclose(fp);
+}
+/**************************************************************************************/
+Write a program to understand the fread() operation
+
+#include<stdio.h>
+struct st
+{
+        char ch;
+        int x;
+        float f;
+        char a[20];
+}v;
+int main()
+{
+        FILE *fp=fopen("data","r");
+        if(fp==NULL)
+        {
+                printf("file not present...\n");
+                return 0;
+        }
+        fread(&v,sizeof(struct st),1,fp);
+        printf("v.ch = %c\n",v.ch);
+        printf("v.x = %d\n",v.x);
+        printf("v.f = %f\n",v.f);
+        printf("v.a = %s\n",v.a);
+return 0;
+}
