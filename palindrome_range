@@ -1,0 +1,18 @@
+WAP Palindrome numbers in particular range 
+ex: 100 to 500
+#include<stdio.h>
+int main()
+{
+        int num,rev=0,temp;
+        for(num=100 ;num<500 ;num++)
+        {
+                rev=0;
+                for(temp=num ;temp!=0 ;temp/=10)
+                {
+                        rev=(rev*10)+(temp%10);
+                }
+                if(rev==num)
+                        printf("%d ",num);
+        }
+        printf("\n");
+}
