@@ -1,0 +1,21 @@
+Program to Print Fibonacci Series up to N Value.
+
+#include<stdio.h>
+void fib(int,int,int);
+int main()
+{
+        int n;
+        printf("Enter the number:\n");
+        scanf("%d",&n);
+        fib(n,0,1);
+        printf("\n");
+}
+void fib(int n,int x,int y)
+{
+        int z;
+        if(x<=n)
+        {
+                printf("%d ",x);
+                fib(n,y,x+y);
+        }
+}
