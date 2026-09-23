@@ -1,0 +1,22 @@
+To print Double binary using int *p pointer 
+#include<stdio.h>
+int main()
+{
+        double d=22.7;
+        int *p=(int *)&d;
+        p++;
+        for(int i=31;i>=0;i--)
+        {
+                printf("%d",*p>>i&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        p--;
+        for(int i=31;i>=0;i--)
+        {
+                printf("%d",*p>>i&1);
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
