@@ -1,0 +1,17 @@
+To Print the Double Binary using Long int *p pointer
+Note: Imp. remember it 
+
+#include<stdio.h>
+#include<stdint.h>
+int main()
+{
+        double d=22.7;
+        uint64_t *p=(uint64_t *)&d;
+        for(int i=63;i>=0;i--)
+        {
+                printf("%d",(int)((*p>>i)&1));
+                if(i%8==0)
+                        printf(" ");
+        }
+        printf("\n");
+}
