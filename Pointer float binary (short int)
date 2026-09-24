@@ -1,0 +1,21 @@
+To print the binary representation of float number using short int *p pointer
+
+#include<stdio.h>
+int main()
+{
+        float f=22.7;
+        short int *p=(short int *)&f;
+        p++;
+        for(int i=15;i>=0;i--)
+        {
+                printf("%d",*p>>i&1);
+                if(i%8==0) printf(" ");
+        }
+        p--;
+        for(int i=15;i>=0;i--)
+        {
+                printf("%d",*p>>i&1);
+                if(i%8==0) printf(" ");
+        }
+        printf("\n");
+}
