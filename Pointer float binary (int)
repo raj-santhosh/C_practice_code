@@ -1,0 +1,13 @@
+To print the binary representation of float number using int *p pointer
+#include<stdio.h>
+int main()
+{
+        float f=22.7;
+        int *p=(int *)&f;
+        for(int i=31;i>=0;i--)
+        {
+                printf("%d",*p>>i&1);
+                if (i % 8 == 0) printf(" ");
+        }
+        printf("\n");
+}
