@@ -1,0 +1,23 @@
+Program to access the collection of strings
+#include<stdio.h>
+void fun(char **);
+int main()
+{
+        char *a[]={"vector","india","chennai"};
+        int i;
+        //for(i=0;i<3;i++)
+        //      printf("%s\n",a[i]);
+        fun(a);
+}
+void fun(char **p)
+{
+        int i,j;
+        for(i=0;i<3;i++)
+                printf("%s\n",p[i]);
+        for(i=0;i<3;i++)
+        {
+                for(j=0;p[i][j];j++)
+                        printf("%c",p[i][j]);
+                printf("\n");
+        }
+}
