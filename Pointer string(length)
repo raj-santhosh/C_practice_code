@@ -1,0 +1,15 @@
+Program to pass a string to a function and then find the length of the string and return its length.
+
+#include<stdio.h>
+int fun (char *);
+int main()
+{
+        char a[20]="Vector India";
+        printf("Length of the string= %d\n",fun(a));
+}
+int fun (char *p)
+{
+        int i;
+        for(i=0;p[i];i++);
+        return i;
+}
