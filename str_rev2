@@ -4,7 +4,8 @@ int main(){
         char s[20]="vector india pvt";
         char *p,*q,t;
         p=s;
-        q=p+5;
+        for(i=0;p[i]!=' ';i++);
+        q=i-1;
         while(p<q)
         {
                 t=*p;
