@@ -1,0 +1,19 @@
+To print the binary representation of float number using char *p pointer
+
+#include<stdio.h>
+int main()
+{
+        float f=22.7;
+        char *p=(char *)&f;
+        p=p+3;
+        for(int i=0;i<4;i++)
+        {
+                for(int j=7;j>=0;j--)
+                {
+                        printf("%d",*p>>j&1);
+                }
+                printf(" ");
+                p--;
+        }
+        printf("\n");
+}
