@@ -11,7 +11,7 @@ typedef struct student
 }STT;
 
 void addEND(STT **);
-void print(STT *);
+void printNode(STT *);
 
 int main()
 {
