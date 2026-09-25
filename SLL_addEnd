@@ -1,0 +1,65 @@
+WAP  using Singly Linked List to Store and Display Student Records using addEnd() function.
+
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct student
+{
+        int roll;
+        char name[20];
+        float marks;
+        struct student *next;
+}STT;
+
+void addEND(STT **);
+void print(STT *);
+
+int main()
+{
+        char op;
+        STT *headptr=0;
+        do
+        {
+                addEnd(&headptr);
+                printf("Do you want to add one more student record\n");
+                scanf(" %c",&op);
+        }while((op=='y') || (op=='Y'));
+
+        printf("Printing the records..\n");
+        print(headptr);
+}
+void addEnd(SLL**ptr)
+{
+        SLL *new,*last;
+        new =malloc(sizeof(SLL));
+        printf("Enter rollno,name and marks \n");
+        scanf("%d %s %f",&new->rollno,new->name,&new->marks);
+
+        new->next=0;
+        if(*ptr==0)
+                *ptr=new;
+        else
+        {
+                last= *ptr;
+                while(last->next)
+                        last=last->next;
+
+                last->next=new;
+        }
+
+
+}
+
+void printNode(SLL*ptr)
+{       printf("\033[37;3m--------------------------\n");
+        if(ptr==0)
+        {       printf("No records found\n");
+                printf("--------------------------\033[0m\n");
+        return;
+        }
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->rollno,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+        printf("--------------------------------\033[0m\n\n");
+}
