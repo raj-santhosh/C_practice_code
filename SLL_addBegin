@@ -10,22 +10,22 @@ typedef struct student
         struct student *next;
 }STT;
 
-void add_begin(STT **);
-void print(STT *);
+void addBegin(STT **);
+void printNode(STT *);
 
 int main()
 {
         char op;
-        STT *hptr=0;
+        STT *headptr=0;
         do
         {
-                add_begin(&hptr);
+                addBegin(&headptr);
                 printf("Do you want to add one more student record\n");
                 scanf(" %c",&op);
         }while((op=='y') || (op=='Y'));
 
         printf("Printing the records..\n");
-        print(hptr);
+        printNode(headptr);
 }
 
 void addBegin(SLL**ptr)
