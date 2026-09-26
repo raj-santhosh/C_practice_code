@@ -1,4 +1,4 @@
-WAP Singly linked list count the Node in SLL...
+WAP Singly linked list count the Node in SLL and print ...
 
 int countNode(SLL*ptr)
 {
@@ -9,4 +9,20 @@ int countNode(SLL*ptr)
                 ptr=ptr->next;
         }
         return c;
+}
+//--------------------------------------printNode----------------------------------------------
+void printNode(SLL*ptr)
+{ 
+        printf("\033[37;3m--------------------------\n");
+        if(ptr==0)
+        {       printf("No records found\n");
+                printf("--------------------------\033[0m\n");
+                return;
+        }
+        while(ptr)
+        {
+                printf("%d %s %f\n",ptr->rollno,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+        printf("--------------------------------\033[0m\n\n");
 }
