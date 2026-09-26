@@ -9,15 +9,15 @@ typedef struct student
         char name[20];
         float marks;
         struct student *next;
-}STT;
+}SLL;
 
-void addMiddle(STT **);
-void printNode(STT *);
-void saveFile(SLL *ptr);
+void addMiddle(SLL **);
+void printNode(SLL *);
+void saveFile(SLL*ptr);
 int main()
 {
         char op;
-        STT *headptr=0;
+        SLL *headptr=0;
         do
         {
                 addMiddle(&headptr);
