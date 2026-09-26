@@ -19,6 +19,7 @@ void addMiddle(SLL **);
 void reversePrint(SLL *);
 void reverseRec(SLL *);
 void printRec(SLL *);
-void searchData(SLL *);
+void sortData(SLL *);
+void searchNode(SLL *);
 void deleteNode(SLL **);
 void reverselinks(SLL **);
