@@ -1,0 +1,27 @@
+WAP singly linked list delete all node in SLL...
+
+#include"header.h"
+int main()
+{
+    SLL*headptr=0;
+    deleteAll(&headptr);
+}
+void deleteAll(SLL**ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records found.\n");
+                return ;
+        }
+        int c=1;
+        SLL *del=*ptr;
+        while(del)
+        {
+                *ptr=del->next;
+                printf("Node deleted :%d\n",c++);
+                free(del);
+                del=*ptr;
+        }
+        printf("\033[31m All nodes deleted...\033[0m\n");
+
+}
