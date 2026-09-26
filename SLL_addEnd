@@ -8,10 +8,10 @@ typedef struct student
         char name[20];
         float marks;
         struct student *next;
-}STT;
+}SLL;
 
-void addEND(STT **);
-void printNode(STT *);
+void addEND(SLL **);
+void printNode(SLL *);
 
 int main()
 {
