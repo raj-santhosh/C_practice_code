@@ -1,0 +1,29 @@
+WAP singly liked list Read tha data from a FILE..
+
+void readFile(SLL**ptr)
+{
+        SLL *new,*last;
+        FILE *fp=fopen("std.txt","r");
+        if(fp==0)
+        {
+                printf("student database not present.\n");
+                return ;
+        }
+        while(1)
+        {
+                new =malloc(sizeof(SLL));
+                if(fscanf(fp,"%d %s %f",&new->rollno,new->name,&new->marks)==-1)
+                        break;
+                new->next = 0;
+                if(*ptr==0)
+                        *ptr=new;
+                else
+                {
+                        last = *ptr;
+                        while(last->next)
+                                last =last->next;
+                        last->next=new;
+                }
+        }
+        printNode(*ptr);
+}
