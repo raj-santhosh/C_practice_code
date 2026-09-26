@@ -1,0 +1,27 @@
+WAP Singly linked list save the data to FILE...
+
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct student
+{
+        int roll;
+        char name[20];
+        float marks;
+        struct student *next;
+}SLL;
+void saveFile(SLL*ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records found\n");
+                return;
+        }
+        FILE *fp=fopen("std.txt","w");
+        while(ptr)
+        {
+                fprintf(fp,"%d %s %f\n",ptr->rollno,ptr->name,ptr->marks);
+                ptr=ptr->next;
+        }
+        printf("Data saved in file\n");
+        fclose(fp);
+}
