@@ -1,0 +1,12 @@
+WAP Singly linked list count the Node in SLL...
+
+int countNode(SLL*ptr)
+{
+        int c=0;
+        while(ptr)
+        {
+                c++;
+                ptr=ptr->next;
+        }
+        return c;
+}
