@@ -16,7 +16,7 @@ void printNode(SLL *);
 int main()
 {
         char op;
-        STT *headptr=0;
+        SLL *headptr=0;
         do
         {
                 addEnd(&headptr);
