@@ -1,4 +1,4 @@
-WAP using Singly Linked List to Store and Display Student Records using add_begin() function.
+WAP using Singly Linked List to Store and Display Student Records using addBegin() function.
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -8,15 +8,15 @@ typedef struct student
         char name[20];
         float marks;
         struct student *next;
-}STT;
+}SLL;
 
-void addBegin(STT **);
-void printNode(STT *);
+void addBegin(SLL **);
+void printNode(SLL *);
 
 int main()
 {
         char op;
-        STT *headptr=0;
+        SLL *headptr=0;
         do
         {
                 addBegin(&headptr);
