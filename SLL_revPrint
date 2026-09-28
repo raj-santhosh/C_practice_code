@@ -1,0 +1,22 @@
+WAP singly linked list reversePrint() 
+
+void reversePrint(SLL *ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records found\n");
+                return;
+        }
+        SLL *t =ptr;
+        int c=countNode(ptr);
+        int i,j;
+        for(i=0 ;i<c ;i++)
+        {
+                t=ptr;
+                for(j=0 ;j<c-1-i ;j++)
+                        t=t->next;
+
+                printf("%d %s %f\n",t->rollno,t->name,t->marks);
+        }
+
+}
