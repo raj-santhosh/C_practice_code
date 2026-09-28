@@ -1,0 +1,29 @@
+WAP singly linked list reverseLinks()
+
+void reverseLinks(SLL **ptr)
+{
+        if(*ptr==0)
+        {
+                printf("No records present..\n");
+                return;
+        }
+        int i,c=countNode(*ptr);
+        SLL **a,*t=*ptr;
+        if(c>1)
+        {
+
+                a=malloc(sizeof(SLL*)*c);
+                for(i=0;i<c;i++)           // stroring address
+                {
+                        a[i]=t;
+                        t=t->next;
+                }
+                for(i=c-1;i>0;i--)
+                        a[i]->next=a[i-1];
+
+                a[0]->next=0;
+                *ptr=a[c-1];
+        }
+        printf("Reverse list success..\n");
+        free(a);
+}
