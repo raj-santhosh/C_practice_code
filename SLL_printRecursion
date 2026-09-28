@@ -1,0 +1,26 @@
+WAP singly linked list printRecursion() and reverseRecursion()
+
+void printRec(SLL *ptr)
+{
+        if(ptr)
+        {
+                printf("%d %s %f",ptr->roll,ptr->name,ptr->marks);
+                if(ptr->next != 0)
+                        printfRec(ptr->next);
+        }
+        else
+                printf("No records present.\n");
+
+}
+
+void reverseRec(SLL *ptr)
+{
+        if(ptr)
+        {
+                if(ptr->next != 0)
+                        reverseRec(ptr->next);
+                printf("%d %s %f",ptr->roll,ptr->name,ptr->marks);
+        }
+        else
+                printf("No records present.\n");
+}
