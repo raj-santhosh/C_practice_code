@@ -1,0 +1,24 @@
+Write a program to allocate memory for 5 strings
+(DMA)
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+        char *p[5];
+        int i;
+        for(i=0;i<5;i++)
+                p[i]=(char *)malloc(20*sizeof(char));
+
+        printf("enter the 5 strings:\n");
+
+        for(i=0;i<5;i++)
+                scanf("%s",p[i]);
+        
+        printf("displaying the strings:\n");
+        for(i=0;i<5;i++)
+                printf("%s\n",p[i]);
+
+        for(i=0;i<5;i++)
+                free(p[i]);
+}
