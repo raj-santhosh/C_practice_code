@@ -1,0 +1,31 @@
+WAP singly linked list deleteNode() by name wise...
+void deleteNode(SLL **ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records present.\n");
+                return;
+        }
+
+        char name[20];
+        printf("Enter a name  to delete\n");
+        scanf("%s",name);
+
+        SLL *del= *ptr,*prev;
+        while(del)
+        {
+                if(strcmp(name,del->name)==0) // if name found
+                {
+                        if(del==*ptr)
+                                *ptr = del->next;
+                        else
+                                prev->next = del->next;
+
+                        free(del);
+                        return;
+                }
+                prev=del;
+                del =del->next;
+        }
+        printf("Name not present..\n");
+}
