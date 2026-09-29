@@ -1,0 +1,26 @@
+WAP singly linked list searchNode() by name..
+
+void searchNode(SLL *ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records present\n");
+                return;
+        }
+        int f=0;
+        char name[20];
+        printf("Enter a name to search:");
+        scanf("%s",name);
+
+        while(ptr)
+        {
+                if(strcmp(name,ptr->name)==0)  
+                {
+                        f=1;
+                        printf("%d %s %f",ptr->rollno,ptr->name,ptr->marks);
+                }
+                ptr=ptr->next;
+        }
+        if(f==0)
+                printf("%s :Not present\n",name);
+}
