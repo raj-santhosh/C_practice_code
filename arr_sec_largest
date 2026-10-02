@@ -1,0 +1,22 @@
+Find the 2nd biggest element in an array
+
+
+#include<stdio.h>
+#include<limits.h>
+int main()
+{
+        int a[]={1,2,3,6,5,4,7,9,8,3};
+        int i,big=INT_MIN,sec_big=INT_MIN,n=sizeof a/sizeof a[0];
+        big=a[0];
+        for(i=1;i<n;i++)
+        {
+                if(a[i]>big)
+                {
+                        sec_big=big;
+                        big=a[i];
+                }
+                else if((a[i]>sec_big) && (a[i]<big))
+                        sec_big=a[i];
+        }
+        printf("Second Biggest Value : %d\n",sec_big);
+}
