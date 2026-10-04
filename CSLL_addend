@@ -1,0 +1,19 @@
+// WAP circular single linked list add at end node.
+
+void addend(CSLL **ptr)
+{
+        CSLL *new,*last;
+        new = malloc(sizeof(CSLL));
+        printf("Enter rollno name marks:\n");
+        scanf("%d %s %f",new->rollno,new->name,new->marks);
+
+        if(*ptr==0)                        // if no records
+                *ptr = new->next = new;       
+        else{
+                new->last=*ptr;            //new next node is prev first node
+                last =*ptr;                //started from first node
+                while(last->next != *ptr)  // finding last node
+                        last =last->next;
+          }
+      last->next=new;     //update last node next addr as new
+}
