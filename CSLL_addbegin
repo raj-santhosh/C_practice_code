@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<unistd.h>
+typedef struct student
+{
+        int rollno;
+        char name[20];
+        float marks;
+        struct studuent *next;
+}CSLL;
+
+int main()
+{
+        CSLL *headptr=0;
+        int c,op;
+        while(1)
+        {       printf("\033[35m------------------------------------\n");
+                printf("1.addbegin \n2.printnode \n3.countnode \n4.addend\n ");
+                printf("Enter your choice:\033[0m\n");
+                scanf("%d",&op);
+
+                switch(op)
+                {
+                        case 1:
+                                addbegin(&headptr);
+                }
+        }
+}
+
+void addbegin(CSLL **ptr)
+{
+        CSLL *new,*last;
+        new = malloc(sizeof(CSLL));
+        printf("enter rollno name and marks.\n");
+        scanf("%d %s %f\n",&new->rollno,new->name,&new->marks);
+
+        if(*ptr==0)                // if no records
+                new->next=new;
+        else
+        {
+                new->next=*ptr;   // new next node is prev first node
+                last=*ptr;        // started from first node
+
+                while(last->next != *ptr)  //finding last node
+                        last=last->next;
+        }
+        last->next=new;          //update last node next addr as new
+        *ptr=new;                // finally update headptr
+}
