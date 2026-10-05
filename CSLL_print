@@ -1,0 +1,32 @@
+WAP Circular Single Linked List print all node and count.
+
+void printnode(CSLL *ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records present.\n");
+                return ;
+        }
+        CSLL *t =ptr;
+        while(t)
+        {
+                printf("%d %s %f\n",t->rollno,t->name,t->marks);
+                t=t->next;
+                if(t==ptr)
+                        break;
+        }
+}
+//--------------------------------COUNT NODE--------------------------------------------------
+int countnode(CSLL *ptr)
+{
+        CSLL *t=ptr;
+        int c=0;
+        while(t){
+                c++;
+                t=t->next;
+                if(t==ptr)
+                        break;
+        }
+        return c;
+
+}
