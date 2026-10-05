@@ -1,0 +1,22 @@
+WAP Circular single linked list data save in a FILE.
+
+void savefile(CSLL *ptr)
+{
+        if(ptr==0)
+        {
+                printf("No records preent..\n");
+                return;
+        }
+        FILE *fp=fopen("stud.txt","w");
+        CSLL *t=ptr;
+        while(t)
+        {
+                fprintf(fp,"%d %s %f\n",t->rollno,t->name,t->marks);
+                t=t->next;
+
+                if(t==ptr)
+                        break;
+        }
+        fclose(fp);
+        printf("-------------Data saved in FILE--------------------\n");
+}
