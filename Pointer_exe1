@@ -1,0 +1,153 @@
+#include<stdio.h>
+int main()
+{
+        char c='a';
+        char *p=&c;
+        p++;
+        *(p-1)=68;
+        p--;
+        printf("%c",*p);  //D
+
+
+        int a=-24;
+        char *p=(char *)&a;
+        *p=*p&0;
+        printf("%d",a); // -256
+
+        int a=-3;
+        unsigned char *p=(char *)&a;
+        printf("%d",*p);// 253
+
+        int t=290;
+        void *u=&t;
+        printf("%d ",*(char*)u);
+        printf("%d ",*(int *)u);  // 34 290
+
+        int r=300;
+        char *p=&r;
+        *++p=1;
+        short int *q=&r;
+        q+1;
+        printf("%d %d",*p,*q); // 1 300
+
+        int x=157;
+        void *q=&x;
+        printf("%d ",(int*)*q); // error
+
+        int n=416;
+        char *b=&n;
+        *b=*b>>2;
+        printf("%d",*b);  // -24
+
+        short int x=556;
+        short int y=557;
+        int *p=&x;
+        *p=15;
+        printf("%d %d",x,y);  // 15 0
+
+        int x=400;
+        void *ptr=&x;
+        printf("%d %d",*((char*)ptr+2),*((char*)ptr +1)); // 0 1
+
+        double *p=NULL;
+        printf("%d\n",p);
+        p=(double*)100;
+        printf("%d",p+2);  // 0 116
+
+
+        int x=348;
+        char *ptr=&x;
+        *ptr++=4;
+        *(ptr+1)=0;
+        printf("%d %d",*ptr,x);  // 1 260
+
+
+        int a=100;
+        int *p=&a;
+        *((char*)p +1)=2;
+        printf("%d",*p);  // 612
+
+        int *p='1';
+        printf("%d ",*p);
+        char *q=2;
+        printf("%d",*q);         // error
+
+        int i,num=500;
+        char *ptr=&num;
+        for(int i=0;i<4;i++)
+        {
+                if(*ptr!=0)
+                        *ptr=2;
+                else
+                        break;
+        }
+        printf("i=%d num= %d",i,num);   // i=garbage value ,num =258
+
+        int *p='1';
+        printf("%d ",p+1);
+        char *q=2;
+        printf("%d",q+1);  // 53 3
+
+        int x=370;
+        short *p=&x;  //type of p is 2byte
+        *p>>=2;
+        *++p=3;
+        *p>>=2;         //only 0000 0000 0000 0011 >>2 then 0 all 2byte
+        printf("%d",x); // 92
+
+        int i=56;
+        void *ptr=&i;
+        printf("%p",++((char*)ptr));   // error typecasting p can't inc
+
+        short int a=45;
+        char *p=&a;
+        *++p=2;
+        printf("%d\n",*--p);    // 45
+        *p=5;
+        printf("%d\n",a);       //517
+
+        int *p=20;
+        printf("%d\n",p+2);
+        short int *q =23;
+        printf("%d\n",q+3);   // 28 29
+
+        char a='3';
+        char b=1;
+        short int *pt=&a;
+        printf("%d",*pt);   //307
+
+
+        int p=200;
+        short int *a=&p;
+        a+1;
+        *++a=0;
+        printf("%d",p);     //200
+
+        void *p=5;
+        printf("%d ",(int*)p+1);
+        printf("%d ",(long int*)p+1);
+        printf("%d ",(char*)p+1);    // 9 13 6
+
+
+        printf("%d\n",sizeof(int *));
+        printf("%d\n",sizeof(char*));
+        printf("%d\n",sizeof(double*));    //8 8 8 pointer
+
+        int *i=255;
+        printf("%p",i); //0xff
+
+
+        int n=404;
+        char *b=&x;
+        if(*b<0)
+            printf("hello");
+        else
+            printf("hai");  //x undeclerd error
+
+
+        int x=126;
+        char *p=&x;
+        printf("%d ",++*p++);  // 127
+        *p=1;
+        printf("%d",x); //383
+}
