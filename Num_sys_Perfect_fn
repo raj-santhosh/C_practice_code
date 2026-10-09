@@ -1,0 +1,41 @@
+#include<stdio.h>
+extern int Check_Perfect(int *p)
+{
+        int sum=0;
+        int i;
+        for(i=1;i<*p;i++)
+                if(!(*p%i))
+                        sum+=i;
+        if(*p==sum)
+                return 1;
+        else
+                return 0;
+}
+extern void perfectRange(int n1,int n2)
+{
+        int i,j,sum;
+        for(i=n1;i<=n2;i++)
+        {
+                sum=0;
+                for(j=1;j<i;j++)
+                        if(!(i%j))
+                                sum+=j;
+                if(i==sum)
+                        printf("%d ",i);
+        }
+}
+extern int perfectCount(int *n1,int *n2)
+{
+        int c=0;
+        int i,j;
+        for(i=*n1;i<=*n2;i++)
+        {
+                int sum=0;
+                for(j=1;j<i;j++)
+                        if(!(i%j))
+                                sum+=j;
+                if(i==sum)
+                        c++;
+        }
+        return c;
+}
