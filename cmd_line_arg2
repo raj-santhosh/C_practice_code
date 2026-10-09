@@ -1,0 +1,35 @@
+WAP program check word palindrome or not through Command line argument...
+
+#include<stdio.h>
+#include<string.h>
+int main(int argc,char **argv)
+{
+        if(argc!=2)
+        {
+                printf("usage:./a.out fname...\n");
+                return 1;
+        }
+        FILE *fp=fopen(argv[1],"r+");
+        int i,j,l,c=0;
+        char temp[20],rev[20],t;
+        while((fscanf(fp,"%s",temp))!=-1)        // scanf one word
+        {
+                l=strlen(temp);            
+                for(i=0;temp[i];i++)
+                        rev[i]=temp[i];       //store another arr each word
+
+                rev[i]=temp[i];              //at the end put '0'
+                for(j=0,l=l-1; j<l; j++,l--)   //reverse the word
+                {
+                        t=temp[j];
+                        temp[j]=temp[l];
+                        temp[l]=t;
+                }
+
+                if((strcmp(rev,temp))==0)
+                        printf("Yes,%s is palindrome",temp);
+                else
+                        printf("Not,%s palindrome",temp);
+        }
+return 0;
+}
