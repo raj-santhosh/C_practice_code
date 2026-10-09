@@ -1,0 +1,61 @@
+#include<stdio.h>
+extern int Check_Strong(int *p)
+{
+        int temp,i,fact,div,sum;
+        temp=*p;
+        sum=0;
+        while(temp)
+        {
+                fact=1;
+                div=temp%10;
+                for(i=div;i>0;i--)
+                        fact=fact*i;
+                sum+=fact;
+                temp/=10;
+        }
+        if(*p==sum)
+                return 1;
+        else
+                return 0;
+}
+extern void strongRange(int n1,int n2)
+{
+        int i,j,temp,fact,div,sum;
+        for(i=n1;i<=n2;i++)
+        {
+                temp=i;
+                sum=0;
+                while(temp)
+                {
+                        fact=1;
+                        div=temp%10;
+                        for(j=div;j>0;j--)
+                                fact=fact*div;
+                        sum+=fact;
+                        temp/=10;
+                }
+                if(i==sum)
+                        printf("%d ",i);
+        }
+}
+extern int strongCount(int *n1,int *n2)
+{
+        int i,j,temp,fact,div,sum,c=0;
+        for(i=*n1;i<=*n2;i++)
+        {
+                temp=i;
+                sum=0;
+                while(temp)
+                {
+                        fact=1;
+                        div=temp%10;
+                        for(j=div;j>0;j--)
+                                fact=fact*div;
+                        sum+=fact;
+                        temp/=10;
+                }
+                if(i==sum)
+                        c++;
+        }
+        return c;
+}
