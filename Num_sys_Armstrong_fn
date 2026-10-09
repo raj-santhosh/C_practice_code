@@ -1,0 +1,80 @@
+#include<stdio.h>
+extern int Check_Armstrong(int *p)
+{
+        int i,j,temp,sum,div,pow=1,c=0;
+        temp=*p;
+        while(temp)
+        {
+                c++;
+                temp/=10;
+        }
+        temp=*p;
+        sum=0;
+        while(temp)
+        {
+                div=temp%10;
+                for(j=0;j<c;j++)
+                        pow=pow*div;
+                sum+=pow;
+                temp/=10;
+        }
+        if(*p==sum)
+                return 1;
+        else
+                return 0;
+}
+extern void armstrongRange(int n1,int n2)
+{
+        int i,j,temp,sum,div,pow,c;
+        for(i=n1;i<=n2;i++)
+        {
+                temp=i;
+                c=0;
+                while(temp)
+                {
+                        c++;
+                        temp/=10;
+                }
+                temp=i;
+                sum=0;
+                while(temp)
+                {
+                        pow=1;
+                        div=temp%10;
+                        for(j=0;j<c;j++)
+                                pow=pow*div;
+                        sum+=pow;
+                        temp/=10;
+                }
+                if(i==sum)
+                        printf("%d ",i);
+        }
+}
+extern int armstrongCount(int *n1,int *n2)
+{
+        int i,j,temp,sum,div,pow,c,count=0;
+        for(i=*n1;i<=*n2;i++)
+        {
+                temp=i;
+                c=0;
+                while(temp)
+                {
+                        c++;
+                        temp/=10;
+                }
+                temp=i;
+                sum=0;
+                while(temp)
+                {
+                        pow=1;
+                        div=temp%10;
+                        for(j=0;j<c;j++)
+                                pow=pow*div;
+                        sum+=pow;
+                        temp/=10;
+                }
+                if(i==sum)
+                        count++;
+        }
+        return count;
+}
