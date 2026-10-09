@@ -1,0 +1,51 @@
+#include<stdio.h>
+extern int Check_Palindrome(int *p)
+{
+        int i,temp,div,rev=0;
+        temp=*p;
+        while(temp)
+        {
+                div=temp%10;
+                rev=rev*10+div;
+                temp/=10;
+        }
+        if(*p==rev)
+                return 1;
+        else
+                return 0;
+}
+extern void palindromeRange(int n1,int n2)
+{
+        int i,j,rev,temp,div;
+        for(i=n1;i<=n2;i++)
+        {
+                temp=i;
+                rev=0;
+                while(temp)
+                {
+                        div=temp%10;
+                        rev=rev*10+div;
+                        temp/=10;
+                }
+                if(i==rev)
+                        printf("%d ",i);
+        }
+}
+extern int palindromeCount(int *n1,int *n2)
+{
+        int i,j,rev,temp,div,c=0;
+        for(i=*n1;i<=*n2;i++)
+        {
+                temp=i;
+                rev=0;
+                while(temp)
+                {
+                        div=temp%10;
+                        rev=rev*10+div;
+                        temp/=10;
+                }
+                if(i==rev)
+                        c++;
+        }
+        return c;
+}
