@@ -1,0 +1,25 @@
+#include<stdio.h>
+#define SUM(a,b) a+b
+int main()
+{
+        int i=10,j=20,k;
+        k=SUM(i,j);
+        printf("Integer addition:%d\n",k);
+
+        float f=23.5,f1=33.5,fsum;
+        fsum = SUM(f,f1);
+        printf("Float addition:%f\n",fsum);
+return 0;
+}
+//----------------------Multiple operationusing MACROS-----------------------
+#define MUL(a,b) (a)*(b)
+int main()
+{
+        int i=2,j=3,k;
+        k=MUL(i,j);
+        printf("Mul:%d\n",k);
+
+        k=MUL(i+2,j+2);
+        printf("mul:%d\n",k);
+return 0;
+}
