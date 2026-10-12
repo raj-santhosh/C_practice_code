@@ -1,0 +1,54 @@
+//----------------------------------SWAP two integers--------------------
+#include<stdio.h>
+#define SWAP(a,b) { int t;\
+                        t=a;\
+                        a=b;\
+                        b=t; }
+int main()
+{
+        int i=10,j=20;
+        SWAP(i,j);
+        printf("%d %d\n",i,j);
+        SWAP(i,j);       // if again call same macro in same block, it replaced "translater give error" redeclared,
+                        //it overcome grouping it {int t;\ t=a; ,.. }  
+
+}
+//------------------------------Any data type replaced-----------------------
+#include<stdio.h>
+#define SWAP(a,b,type) { type t;\
+                        t=a;\
+                        a=b;\
+                        b=t; }
+int main()
+{
+        float i=23.4,j=13.8;
+        SWAP(i,j,float);
+        printf("%f %f\n",i,j);
+        SWAP(j,i,float);
+}
+//----------------------------SET,CLEAR and Toggle a BIT ------------------------------
+#include<stio.h>
+#define SET_BIT(num,pos) num= num|(1<<pos)
+#define CLEAR_BIT(num,pos) num= num&~(1<<pos)
+#define TOGGLE_BIT(num,pos) num= num^(1<<pos)
+void main()
+{
+  int num=100,pos=4;
+  printf("Before=%d\n",num);
+  SET_BIT(num,pos);
+  // CLEAR_BIT(num,pos);
+  // TOGGLE_BIT(num,pos);
+  printf("After=%d\n",num);
+}
+//----------------------------Find largest number----------------------------
+#include<stdio.h>
+#define BIG(a,b) if(a>b)\                       // In macro body in printf before '#-hashsymbol' it converted into string
+                  printf(#a "is greater");
+                  else
+                  printf(#b "is greater");
+voidmain()
+{
+  int x=50,y=80;
+  BIG(a,b);
+}
+  
