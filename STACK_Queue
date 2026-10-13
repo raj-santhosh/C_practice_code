@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+int QUEUE[SIZE];
+int TOP =-1;
+void Enqueue(void);
+void Dequeue(void);
+void display(void);
+
+int main()
+{
+        int op;
+        while(1)
+        {
+                printf("Enter the choice..\n");
+                printf("1.Enqueue\n2.Dequeue\n3.Dislplay\n4.exit\n");
+                scanf("%d",&op);
+                switch(op)
+                {
+                        case 1: Enqueue();      break;
+                        case 2: Dequeue();      break;
+                        case 3: display();      break;
+                        case 4: exit(0);
+                }
+        }
+}
+//----------------------------------------ENQUEUE---------------------------------------
+void Enqueue()
+{
+        if(TOP>=SIZE-1)
+        {
+                printf("Queue Overflow\n");
+                return;
+        }
+        printf("Enter number to Enqueue:");
+        scanf("%d",&QUEUE[++TOP]);                // first increment TOP after add num
+}
+//----------------------------------------DEQUEUE---------------------------------------
+void Dequeue()
+{
+        if(TOP<0)
+        {
+                printf("Queue is Underflow\n");
+                return;
+        }
+        printf("Deleted num: %d",QUEUE[0]);
+        for(int i=0; i<TOP ;i++)
+                QUEUE[i]=QUEUE[i+1];
+        TOP--;
+}
+//--------------------------------------DISPLAY---------------------------------------
+void display()
+{
+        system("clear");
+        if(TOP<0)
+        {
+                printf("Queue is Empty...\n");
+                return;
+        }
+        for(int i=0; i<=TOP ;i++)
+                printf("%d\n",QUEUE[i]);
+}
