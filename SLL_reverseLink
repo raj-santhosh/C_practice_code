@@ -27,3 +27,19 @@ void reverseLinks(SLL **ptr)
         printf("Reverse list success..\n");
         free(a);
 }
+
+2.Using the Loops
+
+void rev_link(SLL **ptr)        //SLL **ptr=&hptr;
+{
+        SLL *q,*r;
+        q=0;
+        while(*ptr)
+        {
+                r=q;
+                q=*ptr;
+                *ptr=(*ptr)->next;
+                q->next=r;
+        }
+        *ptr=q;
+}
