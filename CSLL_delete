@@ -20,13 +20,13 @@ void deletepos(CSLL **ptr)
                                 if(pos==1)        //if first position
                                 {
 
-                                        if(c==1)   //if node count is only one
+                                        if(c==1)            //if node count is only one
                                         {
                                                 *ptr=0;
                                                 free(del);
                                                 return;
                                         }
-                                        CSLL *last=*ptr;
+                                        CSLL *last=*ptr;           //if more than one node
                                         while(last->next != *ptr)  // find last node
                                                 last=last->next;
 
