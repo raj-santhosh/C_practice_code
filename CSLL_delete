@@ -1,0 +1,48 @@
+Write a program Circular singly linked list delete a node by position..
+
+void deletepos(CSLL **ptr)
+{
+        if(*ptr==0){
+                printf("No records present..\n");
+                return ;
+        }
+        CSLL *del=*ptr,*prev;
+        int pos,i,c=countnode(*ptr);
+        printf("Enter position:\n");
+        scanf("%d",&pos);
+
+        if(pos>=1 && pos<=c)       // chech pos available or not
+        {
+                for(i=1; i<=c ;i++)
+                {
+                        if(pos==i)                 //find exact position
+                        {
+                                if(pos==1)        //if first position
+                                {
+
+                                        if(c==1)   //if node count is only one
+                                        {
+                                                *ptr=0;
+                                                free(del);
+                                                return;
+                                        }
+                                        CSLL *last=*ptr;
+                                        while(last->next != *ptr)  // find last node
+                                                last=last->next;
+
+                                        last->next = del->next;  //update last node next
+                                        *ptr = del->next;        //update headptr
+                                }
+                                else        // if middle or last node
+                                        prev->next=del->next;   //update prev node
+
+                                free(del);
+                                return;
+                        }
+                        prev=del;           //follow del one step back
+                        del=del->next;      //visit next node
+                }
+        }
+        else
+                printf("Position out of range...\n");
+}
