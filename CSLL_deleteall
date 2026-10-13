@@ -1,0 +1,20 @@
+Write a program Circular singly linked list delete all nodes..
+
+void deleteall(CSLL **ptr)
+{
+        CSLL *t=*ptr ,*last;
+        if(*ptr==0){
+                printf("Node are not prsent...\n");
+                return;
+        }
+        do
+        {
+                last=t->next;
+                free(t);
+                t=last;
+        }while(t != *ptr);
+
+        *ptr=NULL;
+        print("All nodes are deleted.\n");
+
+}
