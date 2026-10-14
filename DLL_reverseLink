@@ -1,0 +1,15 @@
+WAP Doubly linked list reverse all node links .
+void rev_list()
+{
+        DLL *p=head,*q=0,*temp;
+        while(p)
+        {
+                q=p;
+                p = p->next;
+                temp = q->next;
+                q->next = q->prev;
+                q->prev = temp;
+        }
+        head=q;
+        print();
+}
