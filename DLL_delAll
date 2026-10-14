@@ -1,0 +1,18 @@
+WAP Doubly linked list to delete all nodes..
+
+void del_all()
+{
+        DLL *del=head;
+        if(del==0){
+                printf("Nodes not present..\n ");
+                return;
+        }
+        while(head)
+        {
+                head=del->next;
+                free(del);
+                del=head;
+
+        }
+        printf("All nodes deleted...\n");
+}
