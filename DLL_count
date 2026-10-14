@@ -1,0 +1,13 @@
+WAP Doubly linked list count all nodes return to main().
+
+int count()
+{
+        DLL *ptr=head;
+        int c=0;
+        while(ptr)
+        {
+                c++;
+                ptr=ptr->next;
+        }
+        return c;
+}
