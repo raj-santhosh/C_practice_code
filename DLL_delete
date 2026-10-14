@@ -1,0 +1,81 @@
+WAP Doubly linked list to delete a node by rollno.
+void del_node()
+{
+        DLL *del=head;
+        if(del==0){
+                printf("Node not present..\n");
+                return;
+        }
+        int num;
+        printf("Enter rollno to delete:");
+        scanf("%d",&num);
+        while(del)
+        {
+                if(del->rollno==num)       //search
+                {
+                        if(del==head)      //del 1st node
+                        {
+                                if(head->next==0)          //only 1 node
+                                        head=0;
+                                else{
+                                        del->next->prev=0;  //2nd node prev=0
+                                        head=del->next;
+                                }
+                        }
+                        else if(del->next==0)      //del last node only
+                                del->prev->next=0;
+
+                        else                      //del mid node
+                        {
+                                del->prev->next = del->next;
+                                del->next->prev = del->prev;
+                        }
+                        free(del);
+                        printf("Node deleted...\n");
+                        return;
+                }
+                del= del->next;
+        }
+        printf("Rollno not exist\n");
+
+}
+//-----------------------WAP Doubly linked list to delete a node by name.---------------------
+void del_node()
+{
+        DLL *del=head;
+        if(del==0){
+                printf("Node not present..\n");
+                return;
+        }
+        char name[20];
+        printf("Enter name to delete:");
+        scanf("%s",name);
+        while(del)
+        {
+                if(strcmp(del->name,name)==0)       //search
+                {
+                        if(del==head)      //del 1st node
+                        {
+                                if(head->next==0)          //only 1 node
+                                        head=0;
+                                else{
+                                        del->next->prev=0;  //2nd node prev=0
+                                        head=del->next;
+                                }
+                        }
+                        else if(del->next==0)      //del last node only
+                                del->prev->next=0;
+
+                        else                      //del mid node
+                        {
+                                del->prev->next = del->next;
+                                del->next->prev = del->prev;
+                        }
+                        free(del);
+                        printf("Node deleted...\n");
+                        return;
+                }
+                del= del->next;
+        }
+        printf("Rollno not exist\n");
+}
