@@ -1,0 +1,13 @@
+WAP Double linked list print a nodes in Reverse order.
+void print_rev()
+{
+        DLL *last=head;
+        while(last->next)         //find last node
+                last=last->next;
+
+        while(last)              //print reverse order
+        {
+                printf("%d %s\n",last->rollno,last->name);
+                last=last->prev;
+        }
+}
