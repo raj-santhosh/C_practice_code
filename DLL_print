@@ -1,0 +1,17 @@
+WAP Double linked list print all node.
+
+void print()
+{
+        DLL *ptr=head;
+        if(ptr==0){
+                printf("No records present..\n");
+                return;
+        }
+        printf("-------------------------------------\n");
+        while(ptr)
+        {
+                printf("%d %s\n",ptr->rollno,ptr->name);
+                ptr=ptr->next;
+        }
+        printf("------------------------------------\n");
+}
