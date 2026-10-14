@@ -1,0 +1,16 @@
+WAP Doubly linked list add a node at begin..
+
+void add_begin()
+{
+        DLL *new;
+        new=calloc(1,sizeof(DLL));
+        printf("Enter rollno & name:");
+        scanf("%d %s",&new->rollno,new->name);
+        if(head==0)
+                head=new;
+        else{
+                head->prev=new;
+                new->next=head;
+                head=new;
+        }
+}
