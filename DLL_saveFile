@@ -1,0 +1,18 @@
+WAP Doubly linked list save data into the FILE permanent.
+
+void save_file()
+{
+        DLL*new=head;
+        if(new==0){
+                printf("no records to save..\n");
+                return;
+        }
+        FILE *fp=fopen("stud.txt",w);
+        while(new)
+        {
+                fscanf(fp,"%d %s",&new->rollno,new->name);
+                new=new->next;
+        }
+        fclose(fp);
+        printf("Data saved  in file...\n");
+}
