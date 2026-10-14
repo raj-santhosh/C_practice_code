@@ -1,0 +1,20 @@
+WAP Double linked list add a node at end..
+
+void add_end()
+{
+        DLL *new,*last;
+        new=calloc(1,sizeof(DLL));
+        printf("Enter a rollno name:");
+        scanf("%d %s",&new->rollno,new->name);
+        if(head==0)
+                head=new;
+        else{
+                last=head;
+                while(last->next)
+                        last=last->next;
+
+                new->prev=last;
+                last->next=new;
+        }
+
+}
