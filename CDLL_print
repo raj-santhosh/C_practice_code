@@ -1,0 +1,26 @@
+WAP Circular Doubly linked list for Print a nodes.
+void Print_(void)
+{
+        CDLL *ptr=headptr;
+        if(ptr==0){
+                printf("-------No nodes are found-----\n");
+                return;
+        }
+        do{
+                printf("%d %s\n",ptr->rollno,ptr->name);
+                ptr = ptr->next;
+
+        }while(ptr != headptr);
+}
+//-----------------------------Reverse Print-------------------------------------------
+void rev_Print(void)
+{
+        CDLL *p = headptr->prev;
+        CDLL *q = headptr->prev;
+n:
+        printf("%d %s",p->rollno,p->name);
+        p = p->prev;
+        if(p != q)
+                goto n;
+
+}
