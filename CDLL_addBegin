@@ -1,0 +1,53 @@
+WAP Circular Doubly linked list Add at Begin a node...
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct st{
+        struct st *prev;
+        int rollno;
+        char name[20];
+        struct st *next;
+}CDLL;
+CDLL *headptr=0;
+void add_Begin(void);
+void add_End(void);
+void delete(void);
+void Print_(void);
+void rev_Print(void);
+int main(){
+        int op;
+        while(1){
+                printf("---------Enter your choice :-------\n");
+                printf(" 1.add at begin\n 2.add at end\n 3.print\n 4.Reverse print\n 5.delte\n 6.Exit\n");
+                scanf("%d",&op);
+                switch(op){
+                        case 1: add_Begin(); break;
+                        case 2: add_End();   break;
+                        case 3: Print_();   break;
+                        case 4: rev_Print(); break;
+                        case 5: exit(0);
+                }
+
+        }
+}
+void add_Begin(void)
+{
+        CDLL *new,*last;
+        new =calloc(1,sizeof(CDLL));
+        printf("Enter rollno name:");
+        scanf("%d %s",&new->rollno,new->name);
+        if(headptr==0)        // add 1st node
+        {
+                new ->next = new;
+                new ->prev = new;
+                headptr = new;
+        }
+        else              //2nd node onwards
+        {
+                last = headptr->prev;
+                new ->prev = last;
+                new ->next = headptr;
+                headptr ->prev = new;
+                last ->next = new;
+                headptr = new;
+        }
+}
