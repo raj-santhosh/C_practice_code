@@ -1,0 +1,21 @@
+WAP Circular Doubly linked list for Add at End a Node..
+void add_End(void)
+{
+        CDLL *new,*last;
+        new =calloc(1,sizeof(CDLL));
+        printf("Enter rollno name:");
+        scanf("%d %s",&new->rollno,new->name);
+        if(headptr==0)        // add 1st node
+        {
+                new ->next = new;
+                new ->prev = new;
+                headptr = new;
+        }
+        else{
+                last=headptr->prev;
+                new->prev = last;
+                last->next = new;
+                new->next = headptr;
+                headptr->prev = new;
+        }
+}
