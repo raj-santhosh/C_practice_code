@@ -11,7 +11,7 @@ int main()
         printf("Float addition:%f\n",fsum);
 return 0;
 }
-//----------------------Multiple operationusing MACROS-----------------------
+//----------------------Multiple operation using MACROS-----------------------
 #define MUL(a,b) (a)*(b)
 int main()
 {
